@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "public/app.js", "public/particles.js"  ]
 }
