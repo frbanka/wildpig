@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 2,
+      "speed": 1,
       "direction": "none",
       "random": false,
       "straight": false,
@@ -71,7 +71,7 @@
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "bubble"
+        "mode": "repulse"
       },
       "onclick": {
         "enable": true,
@@ -94,7 +94,7 @@
         "speed": 3
       },
       "repulse": {
-        "distance": 200
+        "distance": 60
       },
       "push": {
         "particles_nb": 4

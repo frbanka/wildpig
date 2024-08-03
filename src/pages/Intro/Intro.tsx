@@ -7,7 +7,6 @@ export const Intro = () => {
   return (
     <section>
       <img src={moon} alt="moon" className="moon"></img>
-      <div id="particles-js"></div>
     </section>
   );
 };
