@@ -1,23 +1,23 @@
 {
   "particles": {
     "number": {
-      "value": 1000,
+      "value": 1200,
       "density": {
         "enable": true,
-        "value_area": 800
+        "value_area": 700
       }
     },
     "color": {
-      "value": "#000"
+      "value": "#ffff89"
     },
     "shape": {
       "type": "circle",
       "stroke": {
         "width": 0,
-        "color": "#000000"
+        "color": "#000"
       },
       "polygon": {
-        "nb_sides": 5
+        "nb_sides": 12
       },
       "image": {
         "src": "img/github.svg",
@@ -36,11 +36,11 @@
       }
     },
     "size": {
-      "value": 5,
+      "value": 1,
       "random": true,
       "anim": {
         "enable": false,
-        "speed": 40,
+        "speed": 1,
         "size_min": 0.1,
         "sync": false
       }
@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 1,
+      "speed": 0.5,
       "direction": "none",
       "random": false,
       "straight": false,
@@ -62,7 +62,7 @@
       "attract": {
         "enable": false,
         "rotateX": 600,
-        "rotateY": 1200
+        "rotateY": 2200
       }
     }
   },
@@ -71,7 +71,7 @@
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "repulse"
+        "mode": "bubble"
       },
       "onclick": {
         "enable": true,
@@ -87,11 +87,11 @@
         }
       },
       "bubble": {
-        "distance": 100,
-        "size": 70,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
+        "distance": 400,
+        "size": 60,
+        "duration": 8,
+        "opacity": 1,
+        "speed": 1
       },
       "repulse": {
         "distance": 60
@@ -107,7 +107,7 @@
   "retina_detect": true,
   "config_demo": {
     "hide_card": false,
-    "background_color": "#b61924",
+    "background_color": "##ffff89",
     "background_image": "",
     "background_position": "50% 50%",
     "background_repeat": "no-repeat",

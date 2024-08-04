@@ -4,9 +4,5 @@ import { NavLink } from "react-router-dom";
 import moon from "../../graphics/moon.jpeg";
 
 export const Intro = () => {
-  return (
-    <section>
-      <img src={moon} alt="moon" className="moon"></img>
-    </section>
-  );
+  return <div></div>;
 };
