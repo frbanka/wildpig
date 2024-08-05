@@ -21,7 +21,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-#moon {
+
+#video {
+  z-index: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -29,7 +31,28 @@ code {
   height: 100%;
   object-fit: cover;
 }
+#logo {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  width: 700px;
+}
+#title2 {
+  position: absolute;
+  top: 48%;
+  left: 55%;
+  font-size: 22px;
+  color: #fff;
+}
+#button {
+  position: absolute;
+  top: 58%;
+  left: 45%;
+  font-size: 30px;
+  cursor: pointer;
+}
 #particles-js {
+  z-index: 2;
   position: relative;
   height: 100vh;
   background: #000;
