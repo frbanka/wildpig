@@ -29,8 +29,10 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <section class="relative">
     <div>
-      <video id="video" autoplay loop muted><source src="video2.mp4#t=19,26" type="video/mp4"></video>
-      <img src="logo_1.png" id="logo"></img>
+      <img id="background" src="background.jpg"></img>
+      <img src="logo_3.png" id="logo"></img>
+      <img src="logo_3_hover.png" id="logo_hover" class="logo_hover" onclick="location.href='http://www.google.com/';"
+        onmouseover="this.className='logo2';" onmouseout="this.className='logo_hover';"></img>
       <div id="title2">by First Result</div>
       <!--<button id="button">włącz się</button>-->
     </div>
@@ -39,6 +41,7 @@
   </section>
   <script src="./particles.js"></script>
   <script src="./app.js"></script>
+
 </body>
 
 </html>
