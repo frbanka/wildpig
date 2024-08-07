@@ -57,7 +57,7 @@ code {
   z-index: 4;
   display: block;
   opacity: 1;
-  transition: all 0.5s;
+  transition: all 1s;
   cursor: pointer;
 }
 #title2 {
