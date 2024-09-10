@@ -23,25 +23,28 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>Dzika Świnia</title>
-
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <section class="relative">
-    <div>
+
+  <section id="relative" class="relative">
+    <div id="appcover">
       <img id="background" src="background.jpg"></img>
       <h3 id="logo">dzika swinia</h3>
-      <h3 id="logo_hover" class="logo_hover" onclick="location.href='http://www.google.com/';"
+      <h3 id="logo_hover" class="logo_hover"
+        onclick="document.getElementById('relative').appendChild('div');document.getElementById('appcover').remove();document.getElementById('particles-js').remove();"
         onmouseover="this.className='logo2';" onmouseout="this.className='logo_hover';">dzika swinia</h3>
-      <!--<button id="button">włącz się</button>-->
     </div>
     <div id="particles-js"></div>
-    <div id="root"></div>
+    <!--<div id="root"></div>-->
   </section>
   <script src="./particles.js"></script>
   <script src="./app.js"></script>
-
+  <!--<script>
+    root2 = document.createElement("div");
+    root2.setAttribute("id", "root");
+  </script>-->
 </body>
 
 </html>
