@@ -1,10 +1,10 @@
 import { routerType } from "../types/router.types";
-import { Intro } from "./Intro/Intro";
-import { Home } from "./Home/Home";
+import { Intro } from "./Intro/Intro.tsx";
+import { Home } from "./Home/Home.tsx";
 
 const pagesData: routerType[] = [
   {
-    path: "intro",
+    path: "Intro",
     element: <Intro />,
     title: "intro",
   },

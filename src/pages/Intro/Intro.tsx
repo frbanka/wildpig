@@ -1,7 +1,5 @@
 import "./Intro.css";
-import React from "react";
-import { NavLink } from "react-router-dom";
-import moon from "../../graphics/moon.jpeg";
+import "./Intro.js";
 
 export const Intro = () => {
   return <div></div>;
