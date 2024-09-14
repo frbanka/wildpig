@@ -2,5 +2,5 @@ import "./Intro.css";
 import "./Intro.js";
 
 export const Intro = () => {
-  return <div></div>;
+  return <div id="root"></div>;
 };

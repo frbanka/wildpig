@@ -4,7 +4,7 @@ import { Home } from "./Home/Home.tsx";
 
 const pagesData: routerType[] = [
   {
-    path: "Intro",
+    path: "intro",
     element: <Intro />,
     title: "intro",
   },

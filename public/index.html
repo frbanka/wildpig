@@ -25,7 +25,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>Dzika Świnia</title>
+  <title>tymczasem w lesie..</title>
 </head>
 
 <body id="body">
@@ -33,18 +33,19 @@
 
   <section id="relative" class="relative">
     <div id="appcover">
-      <img id="background" src="background.jpg"></img>
+      <img class="background" id="background"></img>
       <h3 id="logo">dzika swinia</h3>
-      <h3 id="logo_hover" class="logo_hover"
-        onclick="document.getElementById('relative').remove();document.getElementById('root').classList.remove('root_disabled');document.getElementById('root').classList.add('root_enabled')"
-        ; onmouseover="this.className='logo2';" onmouseout="this.className='logo_hover';">dzika swinia</h3>
+      <h3 id="logo_hover" class="logo_hover" onclick="onClickButton();" ; onmouseover="changeBg()"
+        onmouseout="changeBgBack()">
+        dzika
+        swinia</h3>
     </div>
-    <div id="particles-js"></div>
+    <div id="particles-js" class="particles-js"></div>
   </section>
-  <div id="root"></div>
+  <div id="root" class="root_disabled"></div>
   <script src="./particles.js"></script>
   <script src="./app.js"></script>
-
+ 
 </body>
 
 </html>

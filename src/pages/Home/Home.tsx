@@ -1,6 +1,14 @@
 import React from "react";
 import "./Home.css";
-import "./Home.js";
+//import "./Home.js";
+import soma from "../../graphics/soma.jpeg";
+import ciemnosc from "../../graphics/ciemnosc.jpeg";
+import drapieznik from "../../graphics/drapieznik.jpg";
+import strach from "../../graphics/strach.jpeg";
+import naksiezycu from "../../graphics/naksiezycu.jpeg";
+import usta from "../../graphics/usta.jpeg";
+import dzikaswinia from "../../graphics/dzikaswinia.jpg";
+import pozar from "../../graphics/pozar.png";
 
 export const Home = () => {
   return (
@@ -8,10 +16,10 @@ export const Home = () => {
       <div className="slider">
         <div className="list">
           <div className="item active">
-            <img src="image/img1.png"></img>
+            <img src={soma}></img>
             <div className="content">
               <p>design</p>
-              <h2>Slider 01</h2>
+              <h2>SOMA</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
                 neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -20,10 +28,10 @@ export const Home = () => {
             </div>
           </div>
           <div className="item">
-            <img src="image/img2.jpg"></img>
+            <img src={ciemnosc}></img>
             <div className="content">
               <p>design</p>
-              <h2>Slider 02</h2>
+              <h2>Ciemność</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
                 neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -32,10 +40,10 @@ export const Home = () => {
             </div>
           </div>
           <div className="item">
-            <img src="image/img3.jpg"></img>
+            <img src={drapieznik}></img>
             <div className="content">
               <p>design</p>
-              <h2>Slider 03</h2>
+              <h2>Drapieżnik</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
                 neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -44,10 +52,10 @@ export const Home = () => {
             </div>
           </div>
           <div className="item">
-            <img src="image/img4.jpg"></img>
+            <img src={strach}></img>
             <div className="content">
               <p>design</p>
-              <h2>Slider 04</h2>
+              <h2>Strach</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
                 neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -56,10 +64,58 @@ export const Home = () => {
             </div>
           </div>
           <div className="item">
-            <img src="image/img5.jpg"></img>
+            <img src={naksiezycu}></img>
             <div className="content">
               <p>design</p>
-              <h2>Slider 05</h2>
+              <h2>Na Księżycu</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img src={dzikaswinia}></img>
+            <div className="content">
+              <p>design</p>
+              <h2>Dzika Świnia</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img src={usta}></img>
+            <div className="content">
+              <p>design</p>
+              <h2>Usta Szeroko Otwarte</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img src={pozar}></img>
+            <div className="content">
+              <p>design</p>
+              <h2>Pożar</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img src={pozar}></img>
+            <div className="content">
+              <p>design</p>
+              <h2>Pień</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
                 neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -74,24 +130,40 @@ export const Home = () => {
         </div>
         <div className="thumbnail">
           <div className="item active">
-            <img src="image/img1.png"></img>
-            <div className="content">Name Slider</div>
+            <img src={soma}></img>
+            <div className="content">SOMA</div>
           </div>
           <div className="item">
-            <img src="image/img2.jpg"></img>
-            <div className="content">Name Slider</div>
+            <img src={ciemnosc}></img>
+            <div className="content">Ciemność</div>
           </div>
           <div className="item">
-            <img src="image/img3.jpg"></img>
-            <div className="content">Name Slider</div>
+            <img src={drapieznik}></img>
+            <div className="content">Drapieżnik</div>
           </div>
           <div className="item">
-            <img src="image/img4.jpg"></img>
-            <div className="content">Name Slider</div>
+            <img src={strach}></img>
+            <div className="content">Strach</div>
           </div>
           <div className="item">
-            <img src="image/img5.jpg"></img>
-            <div className="content">Name Slider</div>
+            <img src={naksiezycu}></img>
+            <div className="content">Na Księżycu</div>
+          </div>
+          <div className="item">
+            <img src={dzikaswinia}></img>
+            <div className="content">Dzika Świnia</div>
+          </div>
+          <div className="item">
+            <img src={usta}></img>
+            <div className="content">Usta Szeroko Otwarte</div>
+          </div>
+          <div className="item">
+            <img src={pozar}></img>
+            <div className="content">Pożar</div>
+          </div>
+          <div className="item">
+            <img src={pozar}></img>
+            <div className="content">Pień</div>
           </div>
         </div>
       </div>

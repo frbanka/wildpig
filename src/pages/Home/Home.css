@@ -95,10 +95,10 @@ header .menu {
   animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
 }
 .slider .list .item.active h2 {
-  animation-delay: 1s;
+  animation-delay: 2s;
 }
 .slider .list .item.active p:nth-child(3) {
-  animation-duration: 1.3s;
+  animation-duration: 2s;
 }
 .arrows {
   position: absolute;

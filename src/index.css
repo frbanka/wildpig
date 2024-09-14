@@ -20,6 +20,11 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 code {
@@ -32,6 +37,7 @@ code {
 .root_disabled {
   display: none;
 }
+
 #background {
   z-index: 0;
   position: absolute;
@@ -39,7 +45,27 @@ code {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url("../public/background3.png");
+}
+
+#background2 {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url("../public/background5.png");
 }
 @keyframes neon-blink {
   34% {
@@ -202,7 +228,7 @@ code {
   font-size: 30px;
   cursor: pointer;
 }
-#particles-js {
+.particles-js {
   z-index: 2;
   position: relative;
   height: 100vh;
