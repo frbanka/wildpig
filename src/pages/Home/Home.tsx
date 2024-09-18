@@ -1,14 +1,22 @@
 import React from "react";
 import "./Home.css";
 //import "./Home.js";
-import soma from "../../graphics/soma.jpeg";
-import ciemnosc from "../../graphics/ciemnosc.jpeg";
-import drapieznik from "../../graphics/drapieznik.jpg";
-import strach from "../../graphics/strach.jpeg";
-import naksiezycu from "../../graphics/naksiezycu.jpeg";
-import usta from "../../graphics/usta.jpeg";
-import dzikaswinia from "../../graphics/dzikaswinia.jpg";
+import soma from "../../graphics/soma.png";
+import ciemnosc from "../../graphics/ciemnosc.png";
+import drapieznik from "../../graphics/drapieznik.png";
+import strach from "../../graphics/strach.png";
+import naksiezycu from "../../graphics/naksiezycu.png";
+import usta from "../../graphics/usta.png";
+import dzikaswinia from "../../graphics/dzikaswinia.png";
 import pozar from "../../graphics/pozar.png";
+import pien from "../../graphics/pien.png";
+import urojenia from "../../graphics/urojenia.png";
+import wdymie from "../../graphics/wdymie.png";
+import zaczyna from "../../graphics/zaczyna.png";
+import nietrawie from "../../graphics/nietrawie.png";
+import pierwszy from "../../graphics/pierwszy.png";
+import piekno from "../../graphics/pierwszy.png";
+import niewygram from "../../graphics/niewygram.png";
 
 export const Home = () => {
   return (
@@ -16,57 +24,10 @@ export const Home = () => {
       <div className="slider">
         <div className="list">
           <div className="item active">
-            <img src={soma}></img>
+            <img className="pic" src={naksiezycu}></img>
+            <img id="imgslider" src={naksiezycu}></img>
             <div className="content">
-              <p>design</p>
-              <h2>SOMA</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
-              </p>
-            </div>
-          </div>
-          <div className="item">
-            <img src={ciemnosc}></img>
-            <div className="content">
-              <p>design</p>
-              <h2>Ciemność</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
-              </p>
-            </div>
-          </div>
-          <div className="item">
-            <img src={drapieznik}></img>
-            <div className="content">
-              <p>design</p>
-              <h2>Drapieżnik</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
-              </p>
-            </div>
-          </div>
-          <div className="item">
-            <img src={strach}></img>
-            <div className="content">
-              <p>design</p>
-              <h2>Strach</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
-              </p>
-            </div>
-          </div>
-          <div className="item">
-            <img src={naksiezycu}></img>
-            <div className="content">
-              <p>design</p>
+              <p>Track 1</p>
               <h2>Na Księżycu</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
@@ -76,10 +37,11 @@ export const Home = () => {
             </div>
           </div>
           <div className="item">
-            <img src={dzikaswinia}></img>
+            <img className="pic" src={urojenia}></img>
+            <img id="imgslider" src={urojenia}></img>
             <div className="content">
-              <p>design</p>
-              <h2>Dzika Świnia</h2>
+              <p>Track 2</p>
+              <h2>Urojenia</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
                 neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -88,21 +50,10 @@ export const Home = () => {
             </div>
           </div>
           <div className="item">
-            <img src={usta}></img>
+            <img className="pic" src={pozar}></img>
+            <img id="imgslider" src={pozar}></img>
             <div className="content">
-              <p>design</p>
-              <h2>Usta Szeroko Otwarte</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
-              </p>
-            </div>
-          </div>
-          <div className="item">
-            <img src={pozar}></img>
-            <div className="content">
-              <p>design</p>
+              <p>Track 3</p>
               <h2>Pożar</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
@@ -112,10 +63,141 @@ export const Home = () => {
             </div>
           </div>
           <div className="item">
-            <img src={pozar}></img>
+            <img className="pic" src={wdymie}></img>
+            <img id="imgslider" src={wdymie}></img>
             <div className="content">
-              <p>design</p>
-              <h2>Pień</h2>
+              <p>Track 4</p>
+              <h2>W Dymie Jest Ogień</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={dzikaswinia}></img>
+            <img id="imgslider" src={dzikaswinia}></img>
+            <div className="content">
+              <p>Track 5</p>
+              <h2>Dzika Świnia</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={drapieznik}></img>
+            <img id="imgslider" src={drapieznik}></img>
+            <div className="content">
+              <p>Track 6</p>
+              <h2>Drapieżnik</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={usta}></img>
+            <img id="imgslider" src={usta}></img>
+            <div className="content">
+              <p>Track 7</p>
+              <h2>Usta Szeroko Otwarte</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={piekno}></img>
+            <img id="imgslider" src={piekno}></img>
+            <div className="content">
+              <p>Track 8</p>
+              <h2>Piękno</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={niewygram}></img>
+            <img id="imgslider" src={niewygram}></img>
+            <div className="content">
+              <p>Track 9</p>
+              <h2>Nie Wygram</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={wdymie}></img>
+            <img id="imgslider" src={wdymie}></img>
+            <div className="content">
+              <p>Track 10</p>
+              <h2>W Dymie Jest Ogień</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={urojenia}></img>
+            <img id="imgslider" src={urojenia}></img>
+            <div className="content">
+              <p>Track 11</p>
+              <h2>Urojenia</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={zaczyna}></img>
+            <img id="imgslider" src={zaczyna}></img>
+            <div className="content">
+              <p>Track 12</p>
+              <h2>Zaczyna Padać</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={nietrawie}></img>
+            <img id="imgslider" src={nietrawie}></img>
+            <div className="content">
+              <p>Track 13</p>
+              <h2>Nie Trawię</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={pierwszy}></img>
+            <img id="imgslider" src={pierwszy}></img>
+            <div className="content">
+              <p>Track 14</p>
+              <h2>Pierwszy i Ostatni</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
                 neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -125,45 +207,65 @@ export const Home = () => {
           </div>
         </div>
         <div className="arrows">
-          <button id="prev">P</button>
-          <button id="next">L</button>
+          <button id="prev">←</button>
+          <button id="next">→</button>
         </div>
         <div className="thumbnail">
           <div className="item active">
-            <img src={soma}></img>
-            <div className="content">SOMA</div>
-          </div>
-          <div className="item">
-            <img src={ciemnosc}></img>
-            <div className="content">Ciemność</div>
-          </div>
-          <div className="item">
-            <img src={drapieznik}></img>
-            <div className="content">Drapieżnik</div>
-          </div>
-          <div className="item">
-            <img src={strach}></img>
-            <div className="content">Strach</div>
-          </div>
-          <div className="item">
             <img src={naksiezycu}></img>
             <div className="content">Na Księżycu</div>
           </div>
           <div className="item">
-            <img src={dzikaswinia}></img>
-            <div className="content">Dzika Świnia</div>
-          </div>
-          <div className="item">
-            <img src={usta}></img>
-            <div className="content">Usta Szeroko Otwarte</div>
+            <img src={urojenia}></img>
+            <div className="content">Urojenia</div>
           </div>
           <div className="item">
             <img src={pozar}></img>
             <div className="content">Pożar</div>
           </div>
           <div className="item">
-            <img src={pozar}></img>
-            <div className="content">Pień</div>
+            <img src={wdymie}></img>
+            <div className="content">W Dymie Jest Ogień</div>
+          </div>
+          <div className="item">
+            <img src={dzikaswinia}></img>
+            <div className="content">Dzika Świnia</div>
+          </div>
+          <div className="item">
+            <img src={drapieznik}></img>
+            <div className="content">Drapieżnik</div>
+          </div>
+          <div className="item">
+            <img src={usta}></img>
+            <div className="content">Usta Szeroko Otwarte</div>
+          </div>
+          <div className="item">
+            <img src={piekno}></img>
+            <div className="content">Piękno</div>
+          </div>
+          <div className="item">
+            <img src={niewygram}></img>
+            <div className="content">Nie Wygram</div>
+          </div>
+          <div className="item">
+            <img src={wdymie}></img>
+            <div className="content">W Dymie Jest Ogień</div>
+          </div>
+          <div className="item">
+            <img src={urojenia}></img>
+            <div className="content">Urojenia</div>
+          </div>
+          <div className="item">
+            <img src={zaczyna}></img>
+            <div className="content">Zaczyna Padać</div>
+          </div>
+          <div className="item">
+            <img src={nietrawie}></img>
+            <div className="content">Nie Trawię</div>
+          </div>
+          <div className="item">
+            <img src={pierwszy}></img>
+            <div className="content">Pierwszy i Ostatni</div>
           </div>
         </div>
       </div>
