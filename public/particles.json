@@ -4,7 +4,7 @@
       "value": 300,
       "density": {
         "enable": true,
-        "value_area": 200
+        "value_area": 250
       }
     },
     "color": {
@@ -26,7 +26,7 @@
       }
     },
     "opacity": {
-      "value": 1,
+      "value": 0.2,
       "random": false,
       "anim": {
         "enable": false,
@@ -90,7 +90,7 @@
         "distance": 500,
         "size": 45,
         "duration": 4,
-        "opacity": 2,
+        "opacity": 0.1,
         "speed": 8
       },
       "repulse": {
