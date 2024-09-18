@@ -141,24 +141,11 @@ export const Home = () => {
             </div>
           </div>
           <div className="item">
-            <img className="pic" src={wdymie}></img>
-            <img id="imgslider" src={wdymie}></img>
+            <img className="pic" src={nietrawie}></img>
+            <img id="imgslider" src={nietrawie}></img>
             <div className="content">
               <p>Track 10</p>
-              <h2>W Dymie Jest Ogień</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
-              </p>
-            </div>
-          </div>
-          <div className="item">
-            <img className="pic" src={urojenia}></img>
-            <img id="imgslider" src={urojenia}></img>
-            <div className="content">
-              <p>Track 11</p>
-              <h2>Urojenia</h2>
+              <h2>Nie Trawię</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
                 neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -170,7 +157,7 @@ export const Home = () => {
             <img className="pic" src={zaczyna}></img>
             <img id="imgslider" src={zaczyna}></img>
             <div className="content">
-              <p>Track 12</p>
+              <p>Track 11</p>
               <h2>Zaczyna Padać</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
@@ -180,11 +167,37 @@ export const Home = () => {
             </div>
           </div>
           <div className="item">
-            <img className="pic" src={nietrawie}></img>
-            <img id="imgslider" src={nietrawie}></img>
+            <img className="pic" src={strach}></img>
+            <img id="imgslider" src={strach}></img>
+            <div className="content">
+              <p>Track 12</p>
+              <h2>Strach</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={pien}></img>
+            <img id="imgslider" src={pien}></img>
             <div className="content">
               <p>Track 13</p>
-              <h2>Nie Trawię</h2>
+              <h2>Pień</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ipsum, ex.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={soma}></img>
+            <img id="imgslider" src={soma}></img>
+            <div className="content">
+              <p>Track 13</p>
+              <h2>SOMA</h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
                 neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -248,20 +261,24 @@ export const Home = () => {
             <div className="content">Nie Wygram</div>
           </div>
           <div className="item">
-            <img src={wdymie}></img>
-            <div className="content">W Dymie Jest Ogień</div>
-          </div>
-          <div className="item">
-            <img src={urojenia}></img>
-            <div className="content">Urojenia</div>
+            <img src={nietrawie}></img>
+            <div className="content">Nie Trawię</div>
           </div>
           <div className="item">
             <img src={zaczyna}></img>
             <div className="content">Zaczyna Padać</div>
           </div>
           <div className="item">
-            <img src={nietrawie}></img>
-            <div className="content">Nie Trawię</div>
+            <img src={strach}></img>
+            <div className="content">Strach</div>
+          </div>
+          <div className="item">
+            <img src={pien}></img>
+            <div className="content">Pień</div>
+          </div>
+          <div className="item">
+            <img src={soma}></img>
+            <div className="content">SOMA</div>
           </div>
           <div className="item">
             <img src={pierwszy}></img>
