@@ -1,21 +1,39 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
-import soma from "../../graphics/soma.png";
-import ciemnosc from "../../graphics/ciemnosc.png";
-import drapieznik from "../../graphics/drapieznik.png";
-import strach from "../../graphics/strach.png";
-import naksiezycu from "../../graphics/naksiezycu.png";
-import usta from "../../graphics/usta.png";
-import dzikaswinia from "../../graphics/dzikaswinia.png";
-import pozar from "../../graphics/pozar.png";
-import pien from "../../graphics/pien.png";
-import urojenia from "../../graphics/urojenia.png";
-import wdymie from "../../graphics/wdymie.png";
-import zaczyna from "../../graphics/zaczyna.png";
-import nietrawie from "../../graphics/nietrawie.png";
-import pierwszy from "../../graphics/pierwszy.png";
-import piekno from "../../graphics/pierwszy.png";
-import niewygram from "../../graphics/niewygram.png";
+import soma from "../../graphics/soma-min.png";
+import ciemnosc from "../../graphics/ciemnosc-min.png";
+import drapieznik from "../../graphics/drapieznik-min.png";
+import strach from "../../graphics/strach-min.png";
+import naksiezycu from "../../graphics/naksiezycu-min.png";
+import usta from "../../graphics/usta-min.png";
+import dzikaswinia from "../../graphics/dzikaswinia-min.png";
+import pozar from "../../graphics/pozar-min.png";
+import pien from "../../graphics/pien-min.png";
+import urojenia from "../../graphics/urojenia-min.png";
+import wdymie from "../../graphics/wdymie-min.png";
+import zaczyna from "../../graphics/zaczyna-min.png";
+import nietrawie from "../../graphics/nietrawie-min.png";
+import pierwszy from "../../graphics/pierwszy-min.png";
+import piekno from "../../graphics/zaczyna-min.png";
+import niewygram from "../../graphics/niewygram-min.png";
+
+import somath from "../../graphics/soma-th.png";
+import ciemnoscth from "../../graphics/ciemnosc-th.png";
+import drapieznikth from "../../graphics/drapieznik-th.png";
+import strachth from "../../graphics/strach-th.png";
+import naksiezycuth from "../../graphics/naksiezycu-th.png";
+import ustath from "../../graphics/usta-th.png";
+import dzikaswiniath from "../../graphics/dzikaswinia-th.png";
+import pozarth from "../../graphics/pozar-th.png";
+import pienth from "../../graphics/pien-th.png";
+import urojeniath from "../../graphics/urojenia-th.png";
+import wdymieth from "../../graphics/wdymie-th.png";
+import zaczynath from "../../graphics/zaczyna-th.png";
+import nietrawieth from "../../graphics/nietrawie-th.png";
+import pierwszyth from "../../graphics/pierwszy-th.png";
+import pieknoth from "../../graphics/zaczyna-th.png";
+import niewygramth from "../../graphics/niewygram-th.png";
+
 import naksiezycump3 from "./audio/naksiezycu_demo.mp3";
 
 export const Home = () => {
@@ -119,9 +137,8 @@ export const Home = () => {
               <p>Track 1</p>
               <h2>Na Księżycu</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Wybierzmy się do lasu - cisza, pustka, spokój. Albo może gdzieś
+                dalej..?
               </p>
             </div>
           </div>
@@ -132,9 +149,8 @@ export const Home = () => {
               <p>Track 2</p>
               <h2>Urojenia</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Chcesz wierzyć w to, co jest Ci narzucane? Proszę bardzo. Szukaj
+                szczęscia dalej.
               </p>
             </div>
           </div>
@@ -145,9 +161,8 @@ export const Home = () => {
               <p>Track 3</p>
               <h2>Pożar</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Z prochu powstałeś i w proch się obrócisz. Chyba, że to Ty
+                trzymasz zapałki..!?
               </p>
             </div>
           </div>
@@ -158,9 +173,8 @@ export const Home = () => {
               <p>Track 4</p>
               <h2>W Dymie Jest Ogień</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Co zacząłeś - dokończ. Nie zostawiaj za sobą niczego. Twoje
+                czyny to Twój ciężar.
               </p>
             </div>
           </div>
@@ -171,9 +185,8 @@ export const Home = () => {
               <p>Track 5</p>
               <h2>Dzika Świnia</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Czy wystarczy biec przed siebie, by dobiec do celu? Pamiętaj, że
+                Ziemia jest okrągła..
               </p>
             </div>
           </div>
@@ -184,9 +197,20 @@ export const Home = () => {
               <p>Track 6</p>
               <h2>Drapieżnik</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Uważaj, żeby Ciebie ktoś nie zjadł. Każdy jest czyimś
+                pożywieniem.
+              </p>
+            </div>
+          </div>
+          <div className="item">
+            <img className="pic" src={ciemnosc}></img>
+            <img id="imgslider" src={ciemnosc}></img>
+            <div className="content">
+              <p>Track 7</p>
+              <h2>Ciemność</h2>
+              <p>
+                Nigdy nie wiesz kiedy na Ciebie spadnie. I pochłonie Cię całego.
+                Nasze dni są policzone, nie łudź się, że ktoś nam pomoże.
               </p>
             </div>
           </div>
@@ -194,25 +218,20 @@ export const Home = () => {
             <img className="pic" src={usta}></img>
             <img id="imgslider" src={usta}></img>
             <div className="content">
-              <p>Track 7</p>
+              <p>Track 8</p>
               <h2>Usta Szeroko Otwarte</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
-              </p>
+              <p>Czasem to po prostu za dużo słów..</p>
             </div>
           </div>
           <div className="item">
             <img className="pic" src={piekno}></img>
             <img id="imgslider" src={piekno}></img>
             <div className="content">
-              <p>Track 8</p>
+              <p>Track 9</p>
               <h2>Piękno</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Zero ironii. Czyste piękno. Chyba, że jeszcze do tego
+                niedojrzałeś.
               </p>
             </div>
           </div>
@@ -220,12 +239,11 @@ export const Home = () => {
             <img className="pic" src={niewygram}></img>
             <img id="imgslider" src={niewygram}></img>
             <div className="content">
-              <p>Track 9</p>
+              <p>Track 10</p>
               <h2>Nie Wygram</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Cokolwiek nie zrobisz - jesteś skazany na porażkę. Nie patrz w
+                lustro, kochaj.
               </p>
             </div>
           </div>
@@ -233,12 +251,11 @@ export const Home = () => {
             <img className="pic" src={nietrawie}></img>
             <img id="imgslider" src={nietrawie}></img>
             <div className="content">
-              <p>Track 10</p>
+              <p>Track 11</p>
               <h2>Nie Trawię</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Ileż można tego słuchać? Wsciskają nam kit do uszu, oczu i
+                cholera wie gdzie jeszcze. Aż do porzygu.
               </p>
             </div>
           </div>
@@ -246,38 +263,29 @@ export const Home = () => {
             <img className="pic" src={zaczyna}></img>
             <img id="imgslider" src={zaczyna}></img>
             <div className="content">
-              <p>Track 11</p>
+              <p>Track 12</p>
               <h2>Zaczyna Padać</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
-              </p>
+              <p>Nikomu niepotrzebny deszcz - jak my sami.</p>
             </div>
           </div>
           <div className="item">
             <img className="pic" src={strach}></img>
             <img id="imgslider" src={strach}></img>
             <div className="content">
-              <p>Track 12</p>
+              <p>Track 13</p>
               <h2>Strach</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
-              </p>
+              <p>Wszystkiego się boisz. I dobrze.</p>
             </div>
           </div>
           <div className="item">
             <img className="pic" src={pien}></img>
             <img id="imgslider" src={pien}></img>
             <div className="content">
-              <p>Track 13</p>
+              <p>Track 14</p>
               <h2>Pień</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Upadamy każdego dnia - podobno. Czy ktoś zechce nas podnieść? I
+                ponieść? A może po prostu - wykorzystać..
               </p>
             </div>
           </div>
@@ -285,12 +293,11 @@ export const Home = () => {
             <img className="pic" src={soma}></img>
             <img id="imgslider" src={soma}></img>
             <div className="content">
-              <p>Track 13</p>
+              <p>Track 15</p>
               <h2>SOMA</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Kiedy wydaje Ci się, że w życiu masz nad wszystkim kontrolę..
+                Nad sobą. Na pewno.
               </p>
             </div>
           </div>
@@ -298,12 +305,11 @@ export const Home = () => {
             <img className="pic" src={pierwszy}></img>
             <img id="imgslider" src={pierwszy}></img>
             <div className="content">
-              <p>Track 14</p>
+              <p>Track 16</p>
               <h2>Pierwszy i Ostatni</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
-                neque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ipsum, ex.
+                Czy w tym wyścigu szczurów (królików..?) naprawdę chcesz być na
+                czele? Kto wygra ze sztuczną inteligencją?
               </p>
             </div>
           </div>
@@ -314,63 +320,67 @@ export const Home = () => {
         </div>
         <div className="thumbnail">
           <div className="item active">
-            <img src={naksiezycu}></img>
+            <img src={naksiezycuth} loading="lazy"></img>
             <div className="content">Na Księżycu</div>
           </div>
           <div className="item">
-            <img src={urojenia}></img>
+            <img src={urojeniath} loading="lazy"></img>
             <div className="content">Urojenia</div>
           </div>
           <div className="item">
-            <img src={pozar}></img>
+            <img src={pozarth} loading="lazy"></img>
             <div className="content">Pożar</div>
           </div>
           <div className="item">
-            <img src={wdymie}></img>
+            <img src={wdymieth} loading="lazy"></img>
             <div className="content">W Dymie Jest Ogień</div>
           </div>
           <div className="item">
-            <img src={dzikaswinia}></img>
+            <img src={dzikaswiniath} loading="lazy"></img>
             <div className="content">Dzika Świnia</div>
           </div>
           <div className="item">
-            <img src={drapieznik}></img>
+            <img src={drapieznikth} loading="lazy"></img>
             <div className="content">Drapieżnik</div>
           </div>
           <div className="item">
-            <img src={usta}></img>
+            <img src={ciemnoscth} loading="lazy"></img>
+            <div className="content">Ciemność</div>
+          </div>
+          <div className="item">
+            <img src={ustath} loading="lazy"></img>
             <div className="content">Usta Szeroko Otwarte</div>
           </div>
           <div className="item">
-            <img src={piekno}></img>
+            <img src={pieknoth} loading="lazy"></img>
             <div className="content">Piękno</div>
           </div>
           <div className="item">
-            <img src={niewygram}></img>
+            <img src={niewygramth} loading="lazy"></img>
             <div className="content">Nie Wygram</div>
           </div>
           <div className="item">
-            <img src={nietrawie}></img>
+            <img src={nietrawieth} loading="lazy"></img>
             <div className="content">Nie Trawię</div>
           </div>
           <div className="item">
-            <img src={zaczyna}></img>
+            <img src={zaczynath} loading="lazy"></img>
             <div className="content">Zaczyna Padać</div>
           </div>
           <div className="item">
-            <img src={strach}></img>
+            <img src={strachth} loading="lazy"></img>
             <div className="content">Strach</div>
           </div>
           <div className="item">
-            <img src={pien}></img>
+            <img src={pienth} loading="lazy"></img>
             <div className="content">Pień</div>
           </div>
           <div className="item">
-            <img src={soma}></img>
+            <img src={somath} loading="lazy"></img>
             <div className="content">SOMA</div>
           </div>
           <div className="item">
-            <img src={pierwszy}></img>
+            <img src={pierwszyth} loading="lazy"></img>
             <div className="content">Pierwszy i Ostatni</div>
           </div>
         </div>
