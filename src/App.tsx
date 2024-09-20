@@ -2,10 +2,11 @@ import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./pages/router";
 
-export const App = () => {
+const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Router />
     </BrowserRouter>
   );
 };
+export default App;

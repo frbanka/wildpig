@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { routerType } from "../types/router.types";
 import pagesData from "./pagesData";
+import { Home } from "./Home/Home";
 import { Layout } from "../components/Layout/Layout";
 
 const Router = () => {
@@ -11,6 +12,7 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
         {pageRoutes}
       </Route>
     </Routes>
