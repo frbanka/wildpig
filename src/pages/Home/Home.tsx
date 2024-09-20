@@ -20,42 +20,99 @@ import niewygram from "../../graphics/niewygram.png";
 import naksiezycump3 from "./audio/naksiezycu_demo.mp3";
 
 export const Home = () => {
-  const audioRefs = useRef<HTMLAudioElement[]>([]);
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-
   useEffect(() => {
-    // Funkcja do zarządzania odtwarzaniem dźwięku
-    const handleAudioPlayback = () => {
-      // Pauzuj i zresetuj wszystkie dźwięki
-      audioRefs.current.forEach((audio) => {
-        if (audio) {
-          audio.pause();
-          audio.currentTime = 0;
-        }
-      });
+    let items = document.querySelectorAll<HTMLDivElement>(
+      ".slider .list .item"
+    );
+    let next = document.getElementById("next") as HTMLButtonElement | null;
+    let prev = document.getElementById("prev") as HTMLButtonElement | null;
+    let thumbnails =
+      document.querySelectorAll<HTMLDivElement>(".thumbnail .item");
 
-      // Odtwarzaj dźwięk dla aktywnego elementu
-      if (audioRefs.current[activeIndex]) {
-        audioRefs.current[activeIndex].play().catch((error) => {
-          console.error("Error playing audio:", error);
-        });
+    // config param
+    let countItem = items.length;
+    let itemActive = 0;
+
+    const showSlider = () => {
+      // remove item active old
+      let itemActiveOld = document.querySelector(".slider .list .item.active");
+      let thumbnailActiveOld = document.querySelector(
+        ".thumbnail .item.active"
+      );
+
+      if (itemActiveOld) {
+        itemActiveOld.classList.remove("active");
       }
+      if (thumbnailActiveOld) {
+        thumbnailActiveOld.classList.remove("active");
+      }
+
+      // active new item
+      if (items[itemActive]) {
+        items[itemActive].classList.add("active");
+      }
+      if (thumbnails[itemActive]) {
+        thumbnails[itemActive].classList.add("active");
+      }
+
+      // clear auto time run slider
+      clearInterval(refreshInterval);
+      refreshInterval = setInterval(() => {
+        if (next) next.click();
+      }, 9000);
     };
 
-    handleAudioPlayback();
-  }, [activeIndex]);
+    // event next click
+    if (next) {
+      next.onclick = () => {
+        itemActive = itemActive + 1;
+        if (itemActive >= countItem) {
+          itemActive = 0;
+        }
+        showSlider();
+      };
+    }
+
+    // event prev click
+    if (prev) {
+      prev.onclick = () => {
+        itemActive = itemActive - 1;
+        if (itemActive < 0) {
+          itemActive = countItem - 1;
+        }
+        showSlider();
+      };
+    }
+
+    // auto run slider
+    let refreshInterval = setInterval(() => {
+      if (next) next.click();
+    }, 9000);
+
+    // click thumbnail
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.addEventListener("click", () => {
+        itemActive = index;
+        showSlider();
+      });
+    });
+
+    return () => {
+      // Clean up listeners when component is unmounted
+      clearInterval(refreshInterval);
+      if (next) next.onclick = null;
+      if (prev) prev.onclick = null;
+      thumbnails.forEach((thumbnail) => {
+        thumbnail.onclick = null;
+      });
+    };
+  }, []);
 
   return (
     <div>
       <div className="slider">
         <div className="list">
-          <div className="item">
-            <audio ref={(el) => (audioRefs.current[0] = el!)}>
-              <source src={naksiezycump3} type="audio/mpeg" />
-              <source src="plik_audio.wav" type="audio/wav" />
-              <source src="plik_audio.ogg" type="audio/ogg" />
-              Twój przeglądarka nie wspiera elementu audio.
-            </audio>
+          <div className="item active">
             <img className="pic" src={naksiezycu}></img>
             <img id="imgslider" src={naksiezycu}></img>
             <div className="content">
@@ -68,7 +125,7 @@ export const Home = () => {
               </p>
             </div>
           </div>
-          <div className="item active">
+          <div className="item">
             <img className="pic" src={urojenia}></img>
             <img id="imgslider" src={urojenia}></img>
             <div className="content">
