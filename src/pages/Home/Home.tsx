@@ -19,6 +19,7 @@ import niewygram from "../../graphics/niewygram.png";
 import naksiezycump3 from "./audio/naksiezycu_demo.mp3";
 
 export const Home = () => {
+  console.log("home sie renderuje");
   useEffect(() => {
     let items = document.querySelectorAll<HTMLDivElement>(
       ".slider .list .item"
