@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
-//import "./Home.js";
 import soma from "../../graphics/soma.png";
 import ciemnosc from "../../graphics/ciemnosc.png";
 import drapieznik from "../../graphics/drapieznik.png";
