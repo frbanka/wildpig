@@ -1,6 +1,6 @@
 import { routerType } from "../types/router.types";
-import { Intro } from "./Intro/Intro.tsx";
-import { Home } from "./Home/Home.tsx";
+import { Intro } from "./Intro/Intro";
+import { Home } from "./Home/Home";
 
 const pagesData: routerType[] = [
   {
