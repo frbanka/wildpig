@@ -132,7 +132,7 @@ export const Home = () => {
         <div className="list">
           <div className="item active">
             <img className="pic" src={naksiezycu}></img>
-            <img id="imgslider" src={naksiezycu}></img>
+            <img id="imgslider" loading="lazy" src={naksiezycu}></img>
             <div className="content">
               <p>Track 1</p>
               <h2>Na Księżycu</h2>
@@ -144,7 +144,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={urojenia}></img>
-            <img id="imgslider" src={urojenia}></img>
+            <img id="imgslider" loading="lazy" src={urojenia}></img>
             <div className="content">
               <p>Track 2</p>
               <h2>Urojenia</h2>
@@ -156,7 +156,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={pozar}></img>
-            <img id="imgslider" src={pozar}></img>
+            <img id="imgslider" loading="lazy" src={pozar}></img>
             <div className="content">
               <p>Track 3</p>
               <h2>Pożar</h2>
@@ -168,7 +168,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={wdymie}></img>
-            <img id="imgslider" src={wdymie}></img>
+            <img id="imgslider" loading="lazy" src={wdymie}></img>
             <div className="content">
               <p>Track 4</p>
               <h2>W Dymie Jest Ogień</h2>
@@ -180,7 +180,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={dzikaswinia}></img>
-            <img id="imgslider" src={dzikaswinia}></img>
+            <img id="imgslider" loading="lazy" src={dzikaswinia}></img>
             <div className="content">
               <p>Track 5</p>
               <h2>Dzika Świnia</h2>
@@ -192,7 +192,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={drapieznik}></img>
-            <img id="imgslider" src={drapieznik}></img>
+            <img id="imgslider" loading="lazy" src={drapieznik}></img>
             <div className="content">
               <p>Track 6</p>
               <h2>Drapieżnik</h2>
@@ -204,7 +204,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={ciemnosc}></img>
-            <img id="imgslider" src={ciemnosc}></img>
+            <img id="imgslider" loading="lazy" src={ciemnosc}></img>
             <div className="content">
               <p>Track 7</p>
               <h2>Ciemność</h2>
@@ -216,7 +216,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={usta}></img>
-            <img id="imgslider" src={usta}></img>
+            <img id="imgslider" loading="lazy" src={usta}></img>
             <div className="content">
               <p>Track 8</p>
               <h2>Usta Szeroko Otwarte</h2>
@@ -225,7 +225,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={piekno}></img>
-            <img id="imgslider" src={piekno}></img>
+            <img id="imgslider" loading="lazy" src={piekno}></img>
             <div className="content">
               <p>Track 9</p>
               <h2>Piękno</h2>
@@ -237,7 +237,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={niewygram}></img>
-            <img id="imgslider" src={niewygram}></img>
+            <img id="imgslider" loading="lazy" src={niewygram}></img>
             <div className="content">
               <p>Track 10</p>
               <h2>Nie Wygram</h2>
@@ -249,7 +249,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={nietrawie}></img>
-            <img id="imgslider" src={nietrawie}></img>
+            <img id="imgslider" loading="lazy" src={nietrawie}></img>
             <div className="content">
               <p>Track 11</p>
               <h2>Nie Trawię</h2>
@@ -261,7 +261,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={zaczyna}></img>
-            <img id="imgslider" src={zaczyna}></img>
+            <img id="imgslider" loading="lazy" src={zaczyna}></img>
             <div className="content">
               <p>Track 12</p>
               <h2>Zaczyna Padać</h2>
@@ -270,7 +270,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={strach}></img>
-            <img id="imgslider" src={strach}></img>
+            <img id="imgslider" loading="lazy" src={strach}></img>
             <div className="content">
               <p>Track 13</p>
               <h2>Strach</h2>
@@ -279,7 +279,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={pien}></img>
-            <img id="imgslider" src={pien}></img>
+            <img id="imgslider" loading="lazy" src={pien}></img>
             <div className="content">
               <p>Track 14</p>
               <h2>Pień</h2>
@@ -291,7 +291,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={soma}></img>
-            <img id="imgslider" src={soma}></img>
+            <img id="imgslider" loading="lazy" src={soma}></img>
             <div className="content">
               <p>Track 15</p>
               <h2>SOMA</h2>
@@ -303,7 +303,7 @@ export const Home = () => {
           </div>
           <div className="item">
             <img className="pic" src={pierwszy}></img>
-            <img id="imgslider" src={pierwszy}></img>
+            <img id="imgslider" loading="lazy" src={pierwszy}></img>
             <div className="content">
               <p>Track 16</p>
               <h2>Pierwszy i Ostatni</h2>
