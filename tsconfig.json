@@ -18,5 +18,5 @@
     "jsx": "react-jsx",
     "allowImportingTsExtensions": true
   },
-  "include": ["./src", "public/app.js", "public/particles.js"]
+  "include": ["./src"]
 }
