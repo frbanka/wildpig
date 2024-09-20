@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
 //import "./Home.js";
 import soma from "../../graphics/soma.png";
@@ -17,13 +17,45 @@ import nietrawie from "../../graphics/nietrawie.png";
 import pierwszy from "../../graphics/pierwszy.png";
 import piekno from "../../graphics/pierwszy.png";
 import niewygram from "../../graphics/niewygram.png";
+import naksiezycump3 from "./audio/naksiezycu_demo.mp3";
 
 export const Home = () => {
+  const audioRefs = useRef<HTMLAudioElement[]>([]);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  useEffect(() => {
+    // Funkcja do zarządzania odtwarzaniem dźwięku
+    const handleAudioPlayback = () => {
+      // Pauzuj i zresetuj wszystkie dźwięki
+      audioRefs.current.forEach((audio) => {
+        if (audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+
+      // Odtwarzaj dźwięk dla aktywnego elementu
+      if (audioRefs.current[activeIndex]) {
+        audioRefs.current[activeIndex].play().catch((error) => {
+          console.error("Error playing audio:", error);
+        });
+      }
+    };
+
+    handleAudioPlayback();
+  }, [activeIndex]);
+
   return (
     <div>
       <div className="slider">
         <div className="list">
-          <div className="item active">
+          <div className="item">
+            <audio ref={(el) => (audioRefs.current[0] = el!)}>
+              <source src={naksiezycump3} type="audio/mpeg" />
+              <source src="plik_audio.wav" type="audio/wav" />
+              <source src="plik_audio.ogg" type="audio/ogg" />
+              Twój przeglądarka nie wspiera elementu audio.
+            </audio>
             <img className="pic" src={naksiezycu}></img>
             <img id="imgslider" src={naksiezycu}></img>
             <div className="content">
@@ -36,7 +68,7 @@ export const Home = () => {
               </p>
             </div>
           </div>
-          <div className="item">
+          <div className="item active">
             <img className="pic" src={urojenia}></img>
             <img id="imgslider" src={urojenia}></img>
             <div className="content">
