@@ -1,43 +1,51 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
-import soma from "../../graphics/soma-min.png";
-import ciemnosc from "../../graphics/ciemnosc-min.png";
-import drapieznik from "../../graphics/drapieznik-min.png";
-import strach from "../../graphics/strach-min.png";
-import naksiezycu from "../../graphics/naksiezycu-min.png";
-import usta from "../../graphics/usta-min.png";
-import dzikaswinia from "../../graphics/dzikaswinia-min.png";
-import pozar from "../../graphics/pozar-min.png";
-import pien from "../../graphics/pien-min.png";
-import urojenia from "../../graphics/urojenia-min.png";
-import wdymie from "../../graphics/wdymie-min.png";
-import zaczyna from "../../graphics/zaczyna-min.png";
-import nietrawie from "../../graphics/nietrawie-min.png";
-import pierwszy from "../../graphics/pierwszy-min.png";
-import piekno from "../../graphics/zaczyna-min.png";
-import niewygram from "../../graphics/niewygram-min.png";
+import soma from "../../graphics/soma-min.webp";
+import ciemnosc from "../../graphics/ciemnosc-min.webp";
+import drapieznik from "../../graphics/drapieznik-min.webp";
+import strach from "../../graphics/strach-min.webp";
+import naksiezycu from "../../graphics/naksiezycu-min.webp";
+import usta from "../../graphics/usta-min.webp";
+import dzikaswinia from "../../graphics/dzikaswinia-min.webp";
+import pozar from "../../graphics/pozar-min.webp";
+import pien from "../../graphics/pien-min.webp";
+import urojenia from "../../graphics/urojenia-min.webp";
+import wdymie from "../../graphics/wdymie-min.webp";
+import zaczyna from "../../graphics/zaczyna-min.webp";
+import nietrawie from "../../graphics/nietrawie-min.webp";
+import pierwszy from "../../graphics/pierwszy-min.webp";
+import piekno from "../../graphics/zaczyna-min.webp";
+import niewygram from "../../graphics/niewygram-min.webp";
 
-import somath from "../../graphics/soma-th.png";
-import ciemnoscth from "../../graphics/ciemnosc-th.png";
-import drapieznikth from "../../graphics/drapieznik-th.png";
-import strachth from "../../graphics/strach-th.png";
-import naksiezycuth from "../../graphics/naksiezycu-th.png";
-import ustath from "../../graphics/usta-th.png";
-import dzikaswiniath from "../../graphics/dzikaswinia-th.png";
-import pozarth from "../../graphics/pozar-th.png";
-import pienth from "../../graphics/pien-th.png";
-import urojeniath from "../../graphics/urojenia-th.png";
-import wdymieth from "../../graphics/wdymie-th.png";
-import zaczynath from "../../graphics/zaczyna-th.png";
-import nietrawieth from "../../graphics/nietrawie-th.png";
-import pierwszyth from "../../graphics/pierwszy-th.png";
-import pieknoth from "../../graphics/zaczyna-th.png";
-import niewygramth from "../../graphics/niewygram-th.png";
+import somath from "../../graphics/soma-th.webp";
+import ciemnoscth from "../../graphics/ciemnosc-th.webp";
+import drapieznikth from "../../graphics/drapieznik-th.webp";
+import strachth from "../../graphics/strach-th.webp";
+import naksiezycuth from "../../graphics/naksiezycu-th.webp";
+import ustath from "../../graphics/usta-th.webp";
+import dzikaswiniath from "../../graphics/dzikaswinia-th.webp";
+import pozarth from "../../graphics/pozar-th.webp";
+import pienth from "../../graphics/pien-th.webp";
+import urojeniath from "../../graphics/urojenia-th.webp";
+import wdymieth from "../../graphics/wdymie-th.webp";
+import zaczynath from "../../graphics/zaczyna-th.webp";
+import nietrawieth from "../../graphics/nietrawie-th.webp";
+import pierwszyth from "../../graphics/pierwszy-th.webp";
+import pieknoth from "../../graphics/zaczyna-th.webp";
+import niewygramth from "../../graphics/niewygram-th.webp";
+import naksiezycuDemo from "./audio/naksiezycu_demo.mp3";
+import urojeniaDemo from "./audio/naksiezycu_demo.mp3";
+import pozarDemo from "./audio/naksiezycu_demo.mp3";
 
-import naksiezycump3 from "./audio/naksiezycu_demo.mp3";
+const audioMap: { [key: number]: string } = {
+  0: naksiezycuDemo,
+  1: urojeniaDemo,
+  2: pozarDemo,
+};
 
 export const Home = () => {
-  console.log("home sie renderuje");
+  const audioRef = useRef(new Audio()); // useRef do kontrolowania audio
+
   useEffect(() => {
     let items = document.querySelectorAll<HTMLDivElement>(
       ".slider .list .item"
@@ -52,62 +60,48 @@ export const Home = () => {
     let itemActive = 0;
 
     const showSlider = () => {
-      // remove item active old
+      const audioFile = audioMap[itemActive]; // Wybór odpowiedniego pliku audio
+      playAudio(audioFile);
+
       let itemActiveOld = document.querySelector(".slider .list .item.active");
       let thumbnailActiveOld = document.querySelector(
         ".thumbnail .item.active"
       );
 
-      if (itemActiveOld) {
-        itemActiveOld.classList.remove("active");
-      }
-      if (thumbnailActiveOld) {
-        thumbnailActiveOld.classList.remove("active");
-      }
+      if (itemActiveOld) itemActiveOld.classList.remove("active");
+      if (thumbnailActiveOld) thumbnailActiveOld.classList.remove("active");
 
-      // active new item
-      if (items[itemActive]) {
-        items[itemActive].classList.add("active");
-      }
-      if (thumbnails[itemActive]) {
+      if (items[itemActive]) items[itemActive].classList.add("active");
+      if (thumbnails[itemActive])
         thumbnails[itemActive].classList.add("active");
-      }
 
-      // clear auto time run slider
       clearInterval(refreshInterval);
       refreshInterval = setInterval(() => {
         if (next) next.click();
       }, 9000);
     };
-
-    // event next click
+    const playAudio = (file: string) => {
+      const audio = new Audio(file);
+      audio.play();
+    };
     if (next) {
       next.onclick = () => {
-        itemActive = itemActive + 1;
-        if (itemActive >= countItem) {
-          itemActive = 0;
-        }
+        itemActive = (itemActive + 1) % countItem;
         showSlider();
       };
     }
 
-    // event prev click
     if (prev) {
       prev.onclick = () => {
-        itemActive = itemActive - 1;
-        if (itemActive < 0) {
-          itemActive = countItem - 1;
-        }
+        itemActive = (itemActive - 1 + countItem) % countItem;
         showSlider();
       };
     }
 
-    // auto run slider
     let refreshInterval = setInterval(() => {
       if (next) next.click();
     }, 9000);
 
-    // click thumbnail
     thumbnails.forEach((thumbnail, index) => {
       thumbnail.addEventListener("click", () => {
         itemActive = index;
@@ -116,13 +110,8 @@ export const Home = () => {
     });
 
     return () => {
-      // Clean up listeners when component is unmounted
       clearInterval(refreshInterval);
-      if (next) next.onclick = null;
-      if (prev) prev.onclick = null;
-      thumbnails.forEach((thumbnail) => {
-        thumbnail.onclick = null;
-      });
+      if (audioRef.current) audioRef.current.pause();
     };
   }, []);
 
