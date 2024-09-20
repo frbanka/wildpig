@@ -1,6 +1,5 @@
 {
   "name": "wildpig",
-  "homepage": "https://frbanka.github.io/wildpig",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
