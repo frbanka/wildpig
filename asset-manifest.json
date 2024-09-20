@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wildpig/static/css/main.9cbe87d5.css",
-    "main.js": "/wildpig/static/js/main.0671bb4a.js",
+    "main.js": "/wildpig/static/js/main.9d3f2246.js",
     "static/js/453.281639a3.chunk.js": "/wildpig/static/js/453.281639a3.chunk.js",
     "static/media/naksiezycu.png": "/wildpig/static/media/naksiezycu.ca75144faeddba85f3dc.png",
     "static/media/zaczyna.png": "/wildpig/static/media/zaczyna.5536e9fb52ffb0f1f148.png",
@@ -22,11 +22,11 @@
     "static/media/crazy.TTF": "/wildpig/static/media/crazy.dea0d41cc1895248c667.TTF",
     "index.html": "/wildpig/index.html",
     "main.9cbe87d5.css.map": "/wildpig/static/css/main.9cbe87d5.css.map",
-    "main.0671bb4a.js.map": "/wildpig/static/js/main.0671bb4a.js.map",
+    "main.9d3f2246.js.map": "/wildpig/static/js/main.9d3f2246.js.map",
     "453.281639a3.chunk.js.map": "/wildpig/static/js/453.281639a3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9cbe87d5.css",
-    "static/js/main.0671bb4a.js"
+    "static/js/main.9d3f2246.js"
   ]
 }
