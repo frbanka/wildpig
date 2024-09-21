@@ -181,6 +181,50 @@ header .menu {
   position: absolute;
   inset: auto 10px 10px 10px;
 }
+/*ssssssssssssssssssssssssssssssssss */
+.slider {
+  position: relative;
+  margin-bottom: 20px; /* Odstęp między sliderem a miniaturkami */
+}
+
+.thumbnail-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  cursor: grab;
+  overflow: hidden; /* Ukrycie nadmiarowych miniaturek */
+  width: 460px; /* Szerokość kontenera na miniaturki */
+  position: absolute;
+  z-index: 10;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%); /* Wyśrodkowanie kontenera */
+}
+
+.thumbnail-list {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-item {
+  flex: 0 0 150px; /* Szerokość miniaturki */
+  margin: 0 5px; /* Odstępy między miniaturkami */
+  height: 320px;
+  flex-shrink: 0;
+  pointer-events: auto; /* Przywróć domyślne zdarzenia */
+}
+
+.thumbnail-item img {
+  width: 100%; /* Szerokość dopasowana do kontenera */
+  object-fit: cover;
+  height: 250px;
+  opacity: 0.1; /* Upewnij się, że miniaturki nie są przezroczyste */
+}
+
+.thumbnail-item.active img {
+  border: 2px solid #000; /* Podświetlenie aktywnej miniaturki */
+  opacity: 1;
+}
+/*ssssssssssssssssssssssssssssssssss */
 @media screen and (max-width: 678px) {
   .thumbnail {
     justify-content: center;

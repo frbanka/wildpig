@@ -44,7 +44,33 @@ const audioMap: { [key: number]: string } = {
 };
 
 export const Home = () => {
-  const audioRef = useRef(new Audio()); // useRef do kontrolowania audio
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [itemActive, setItemActive] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const thumbnailRef = useRef<HTMLDivElement | null>(null);
+  const [wasDragging, setWasDragging] = useState(false);
+  const dragThreshold = 5;
+
+  const thumbnails = [
+    { src: naksiezycuth },
+    { src: urojeniath },
+    { src: pozarth },
+    { src: wdymieth },
+    { src: dzikaswiniath },
+    { src: drapieznikth },
+    { src: ciemnoscth },
+    { src: ustath },
+    { src: pieknoth },
+    { src: niewygramth },
+    { src: nietrawieth },
+    { src: zaczynath },
+    { src: strachth },
+    { src: pienth },
+    { src: somath },
+    { src: pierwszyth },
+  ];
 
   useEffect(() => {
     let items = document.querySelectorAll<HTMLDivElement>(
@@ -52,68 +78,121 @@ export const Home = () => {
     );
     let next = document.getElementById("next") as HTMLButtonElement | null;
     let prev = document.getElementById("prev") as HTMLButtonElement | null;
-    let thumbnails =
-      document.querySelectorAll<HTMLDivElement>(".thumbnail .item");
 
-    // config param
-    let countItem = items.length;
-    let itemActive = 0;
+    let refreshInterval = setInterval(() => {
+      if (next) next.click();
+    }, 9000);
 
     const showSlider = () => {
-      const audioFile = audioMap[itemActive]; // Wybór odpowiedniego pliku audio
-      playAudio(audioFile);
-
       let itemActiveOld = document.querySelector(".slider .list .item.active");
-      let thumbnailActiveOld = document.querySelector(
-        ".thumbnail .item.active"
-      );
-
       if (itemActiveOld) itemActiveOld.classList.remove("active");
-      if (thumbnailActiveOld) thumbnailActiveOld.classList.remove("active");
 
       if (items[itemActive]) items[itemActive].classList.add("active");
-      if (thumbnails[itemActive])
-        thumbnails[itemActive].classList.add("active");
 
-      clearInterval(refreshInterval);
-      refreshInterval = setInterval(() => {
-        if (next) next.click();
-      }, 9000);
+      const audioFile = audioMap[itemActive];
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+        audioRef.current.src = audioFile;
+        audioRef.current
+          .play()
+          .catch((error) => console.log("Error playing audio:", error));
+      }
+
+      if (thumbnailRef.current) {
+        thumbnailRef.current.scrollLeft = itemActive * 110;
+      }
     };
-    const playAudio = (file: string) => {
-      const audio = new Audio(file);
-      audio.play();
-    };
+
     if (next) {
       next.onclick = () => {
-        itemActive = (itemActive + 1) % countItem;
+        setItemActive((prev) => (prev + 1) % items.length);
         showSlider();
       };
     }
 
     if (prev) {
       prev.onclick = () => {
-        itemActive = (itemActive - 1 + countItem) % countItem;
+        setItemActive((prev) => (prev - 1 + items.length) % items.length);
         showSlider();
       };
     }
 
-    let refreshInterval = setInterval(() => {
-      if (next) next.click();
-    }, 9000);
-
-    thumbnails.forEach((thumbnail, index) => {
-      thumbnail.addEventListener("click", () => {
-        itemActive = index;
-        showSlider();
-      });
-    });
+    showSlider();
 
     return () => {
       clearInterval(refreshInterval);
-      if (audioRef.current) audioRef.current.pause();
+      if (next) next.onclick = null;
+      if (prev) prev.onclick = null;
     };
-  }, []);
+  }, [itemActive]);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (thumbnailRef.current) {
+      setIsDragging(true);
+      setWasDragging(false); // Resetowanie przed przeciągnięciem
+      setStartX(e.pageX - thumbnailRef.current.offsetLeft);
+      setScrollLeft(thumbnailRef.current.scrollLeft);
+      thumbnailRef.current.style.cursor = "grabbing";
+      e.preventDefault();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+    if (thumbnailRef.current) {
+      thumbnailRef.current.style.cursor = "default";
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    if (thumbnailRef.current) {
+      thumbnailRef.current.style.cursor = "grab";
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !thumbnailRef.current) return;
+
+    e.preventDefault();
+    const x = e.pageX - thumbnailRef.current.offsetLeft;
+    const walk = x - startX; // Prędkość przewijania
+
+    // Sprawdź, czy przemieszczenie przekracza próg przeciągania
+    if (Math.abs(walk) > dragThreshold) {
+      setWasDragging(true); // Ustaw, że to przeciąganie
+    }
+
+    thumbnailRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const changeImage = (index: number) => {
+    setItemActive(index);
+
+    if (thumbnailRef.current) {
+      const thumbnailWidth = 150; // Szerokość miniaturki
+      const spacing = 5; // Odstęp między miniaturkami
+      const wrapperWidth = thumbnailRef.current.clientWidth; // Szerokość wrappera
+
+      // Oblicz całkowitą szerokość miniatur do wyśrodkowania
+      const totalThumbnailWidth = thumbnailWidth + spacing;
+
+      // Oblicz położenie aktywnej miniaturki
+      const activeThumbnailLeft = index * totalThumbnailWidth;
+
+      // Oblicz nową wartość scrollLeft
+      const newScrollLeft =
+        activeThumbnailLeft - wrapperWidth / 2 + thumbnailWidth / 2;
+
+      // Ustal scrollLeft, aby miniaturka była na środku
+      const maxScrollLeft = thumbnailRef.current.scrollWidth - wrapperWidth;
+      thumbnailRef.current.scrollLeft = Math.max(
+        0,
+        Math.min(newScrollLeft, maxScrollLeft)
+      );
+    }
+  };
 
   return (
     <div>
@@ -307,73 +386,32 @@ export const Home = () => {
           <button id="prev">←</button>
           <button id="next">→</button>
         </div>
-        <div className="thumbnail">
-          <div className="item active">
-            <img src={naksiezycuth} loading="lazy"></img>
-            <div className="content">Na Księżycu</div>
-          </div>
-          <div className="item">
-            <img src={urojeniath} loading="lazy"></img>
-            <div className="content">Urojenia</div>
-          </div>
-          <div className="item">
-            <img src={pozarth} loading="lazy"></img>
-            <div className="content">Pożar</div>
-          </div>
-          <div className="item">
-            <img src={wdymieth} loading="lazy"></img>
-            <div className="content">W Dymie Jest Ogień</div>
-          </div>
-          <div className="item">
-            <img src={dzikaswiniath} loading="lazy"></img>
-            <div className="content">Dzika Świnia</div>
-          </div>
-          <div className="item">
-            <img src={drapieznikth} loading="lazy"></img>
-            <div className="content">Drapieżnik</div>
-          </div>
-          <div className="item">
-            <img src={ciemnoscth} loading="lazy"></img>
-            <div className="content">Ciemność</div>
-          </div>
-          <div className="item">
-            <img src={ustath} loading="lazy"></img>
-            <div className="content">Usta Szeroko Otwarte</div>
-          </div>
-          <div className="item">
-            <img src={pieknoth} loading="lazy"></img>
-            <div className="content">Piękno</div>
-          </div>
-          <div className="item">
-            <img src={niewygramth} loading="lazy"></img>
-            <div className="content">Nie Wygram</div>
-          </div>
-          <div className="item">
-            <img src={nietrawieth} loading="lazy"></img>
-            <div className="content">Nie Trawię</div>
-          </div>
-          <div className="item">
-            <img src={zaczynath} loading="lazy"></img>
-            <div className="content">Zaczyna Padać</div>
-          </div>
-          <div className="item">
-            <img src={strachth} loading="lazy"></img>
-            <div className="content">Strach</div>
-          </div>
-          <div className="item">
-            <img src={pienth} loading="lazy"></img>
-            <div className="content">Pień</div>
-          </div>
-          <div className="item">
-            <img src={somath} loading="lazy"></img>
-            <div className="content">SOMA</div>
-          </div>
-          <div className="item">
-            <img src={pierwszyth} loading="lazy"></img>
-            <div className="content">Pierwszy i Ostatni</div>
-          </div>
+      </div>
+      <div
+        className="thumbnail-wrapper"
+        ref={thumbnailRef}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+        style={{ overflow: "hidden", cursor: isDragging ? "grabbing" : "grab" }}
+      >
+        <div className="thumbnail-list" style={{ display: "flex" }}>
+          {thumbnails.map((thumbnail, index) => (
+            <div
+              key={index}
+              className={`thumbnail-item ${
+                itemActive === index ? "active" : ""
+              }`}
+              onClick={() => changeImage(index)} // Wywołaj zmianę tylko jeśli nie było przeciągania
+              style={{ width: "150px", flexShrink: 0 }}
+            >
+              <img src={thumbnail.src} alt={`Thumbnail ${index + 1}`} />
+            </div>
+          ))}
         </div>
       </div>
+      <audio ref={audioRef} />
     </div>
   );
 };
