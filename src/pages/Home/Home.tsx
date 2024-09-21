@@ -168,22 +168,22 @@ export const Home = () => {
   };
 
   const changeImage = (index: number) => {
+    if (wasDragging) return; // Jeśli było przeciąganie, nie zmieniaj obrazu
     setItemActive(index);
 
     if (thumbnailRef.current) {
       const thumbnailWidth = 150; // Szerokość miniaturki
       const spacing = 5; // Odstęp między miniaturkami
+      const offset = index * (thumbnailWidth + spacing);
+      thumbnailRef.current.scrollLeft = offset; // Przewiń do aktywnej miniatury
       const wrapperWidth = thumbnailRef.current.clientWidth; // Szerokość wrappera
 
       // Oblicz całkowitą szerokość miniatur do wyśrodkowania
-      const totalThumbnailWidth = thumbnailWidth + spacing;
+      const totalThumbnailWidth = thumbnailWidth + spacing; // Szerokość miniatury z odstępem
 
-      // Oblicz położenie aktywnej miniaturki
-      const activeThumbnailLeft = index * totalThumbnailWidth;
-
-      // Oblicz nową wartość scrollLeft
+      // Oblicz nową wartość scrollLeft, aby aktywna miniaturka była na środku
       const newScrollLeft =
-        activeThumbnailLeft - wrapperWidth / 2 + thumbnailWidth / 2;
+        index * totalThumbnailWidth - wrapperWidth / 2 + thumbnailWidth / 2;
 
       // Ustal scrollLeft, aby miniaturka była na środku
       const maxScrollLeft = thumbnailRef.current.scrollWidth - wrapperWidth;

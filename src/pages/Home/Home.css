@@ -198,6 +198,7 @@ header .menu {
   top: 75%;
   left: 50%;
   transform: translateX(-50%); /* Wyśrodkowanie kontenera */
+  perspective: 1000px; /* Dodanie perspektywy */
 }
 
 .thumbnail-list {
@@ -211,8 +212,11 @@ header .menu {
   height: 320px;
   flex-shrink: 0;
   pointer-events: auto; /* Przywróć domyślne zdarzenia */
+  transition: transform 0.3s ease; /* Płynne przejścia dla transformacji */
 }
-
+.thumbnail-item:hover {
+  transform: translateZ(20px); /* Efekt unoszenia na hover */
+}
 .thumbnail-item img {
   width: 100%; /* Szerokość dopasowana do kontenera */
   object-fit: cover;
@@ -223,6 +227,10 @@ header .menu {
 .thumbnail-item.active img {
   border: 2px solid #000; /* Podświetlenie aktywnej miniaturki */
   opacity: 1;
+}
+.thumbnail-item:not(.active) {
+  transform: scale(0.5); /* Zmniejszenie pozostałych miniaturek */
+  opacity: 0.5; /* Ustalona przezroczystość */
 }
 /*ssssssssssssssssssssssssssssssssss */
 @media screen and (max-width: 678px) {
