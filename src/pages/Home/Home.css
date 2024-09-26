@@ -38,13 +38,25 @@ header .menu {
   height: 100vh;
   margin-top: -50px;
   position: relative;
+  overflow: hidden;
 }
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0; /* Ustawiamy domyślnie na 0 */
+  transition: opacity 0.5s; /* Dodajemy przejście dla opacity */
+}
+
 .slider .list .item {
   position: absolute;
   inset: 0 0 0 0;
   overflow: hidden;
   opacity: 0;
-  transition: 0.5s;
+  z-index: 1;
 }
 .slider .list .item img#imgslider {
   width: 100%;
@@ -60,6 +72,8 @@ header .menu {
   position: absolute;
   left: 0;
   bottom: 0;
+  z-index: 1;
+  opacity: 1; /* Ustaw opacity na 1, aby był widoczny */
   background-image: linear-gradient(to top, #000 40%, transparent);
 }
 .slider .list .item .content {
@@ -68,7 +82,7 @@ header .menu {
   top: 15%;
   width: 600px;
   max-width: 80%;
-  z-index: 1;
+  z-index: 2;
 }
 .pic {
   position: absolute;
@@ -81,7 +95,10 @@ header .menu {
   -moz-box-shadow: 0px 1px 14px 8px rgb(20, 21, 31);
   box-shadow: 0px 1px 14px 8px rgb(20, 21, 31);
   z-index: 1;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
+
 .slider .list .item .content p:nth-child(1) {
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -129,13 +146,13 @@ header .menu {
   z-index: 100;
 }
 .arrows button {
-  background-color: #eee5;
+  background-color: rgba(238, 238, 238, 0);
   border: none;
   font-family: monospace;
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  font-size: x-large;
+  font-size: 20px;
   color: #eee;
   transition: 0.5s;
 }
@@ -143,107 +160,15 @@ header .menu {
   background-color: #eee;
   color: black;
 }
-.thumbnail {
-  position: absolute;
-  top: 80%;
-  z-index: 11;
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  height: 440px;
-  padding: 0 200px;
-  box-sizing: border-box;
-  overflow: auto;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.thumbnail::-webkit-scrollbar {
-  width: 0;
-}
-.thumbnail .item {
-  max-width: 120px;
-  height: 220px;
-  filter: brightness(0.5);
-  transition: 0.5s;
-  flex-shrink: 0;
-  flex-basis: calc(100% / 3);
-}
-.thumbnail .item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.thumbnail .item.active {
-  filter: brightness(1.5);
-}
-.thumbnail .item .content {
-  position: absolute;
-  inset: auto 10px 10px 10px;
-}
 /*ssssssssssssssssssssssssssssssssss */
 .slider {
   position: relative;
+  overflow: hidden;
   margin-bottom: 20px; /* Odstęp między sliderem a miniaturkami */
 }
 
-.thumbnail-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  cursor: grab;
-  overflow: hidden; /* Ukrycie nadmiarowych miniaturek */
-  width: 460px; /* Szerokość kontenera na miniaturki */
-  position: absolute;
-  z-index: 10;
-  top: 75%;
-  left: 50%;
-  transform: translateX(-50%); /* Wyśrodkowanie kontenera */
-  perspective: 1000px; /* Dodanie perspektywy */
-}
-
-.thumbnail-list {
-  display: flex;
-  transition: transform 0.3s ease;
-}
-
-.thumbnail-item {
-  flex: 0 0 150px; /* Szerokość miniaturki */
-  margin: 0 5px; /* Odstępy między miniaturkami */
-  height: 320px;
-  flex-shrink: 0;
-  pointer-events: auto; /* Przywróć domyślne zdarzenia */
-  transition: transform 0.3s ease; /* Płynne przejścia dla transformacji */
-}
-.thumbnail-item:hover {
-  transform: translateZ(20px); /* Efekt unoszenia na hover */
-}
-.thumbnail-item img {
-  width: 100%; /* Szerokość dopasowana do kontenera */
-  object-fit: cover;
-  height: 250px;
-  opacity: 0.1; /* Upewnij się, że miniaturki nie są przezroczyste */
-}
-
-.thumbnail-item.active img {
-  border: 2px solid #000; /* Podświetlenie aktywnej miniaturki */
-  opacity: 1;
-}
-.thumbnail-item:not(.active) {
-  transform: scale(0.5); /* Zmniejszenie pozostałych miniaturek */
-  opacity: 0.5; /* Ustalona przezroczystość */
-}
 /*ssssssssssssssssssssssssssssssssss */
 @media screen and (max-width: 678px) {
-  .thumbnail {
-    justify-content: center;
-    padding: 0 10px;
-  }
-  .thumbnail .item {
-    width: 120px;
-    height: 220px;
-    flex-shrink: 0;
-    flex-basis: calc(100% / 4);
-  }
   .slider .list .item .content h2 {
     font-size: 40px;
     line-height: 50px;
@@ -289,16 +214,6 @@ header .menu {
   }
 }
 @media screen and (min-width: 679px) and (max-width: 1280px) {
-  .thumbnail {
-    justify-content: center;
-    padding: 0 30px;
-  }
-  .thumbnail .item {
-    width: 120px;
-    height: 220px;
-    flex-shrink: 0;
-    flex-basis: calc(100% / 2);
-  }
   .slider .list .item .content h2 {
     font-size: 50px;
     text-align: left;
