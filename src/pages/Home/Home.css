@@ -94,7 +94,7 @@ header .menu {
   -webkit-box-shadow: 0px 1px 14px 8px rgb(20, 21, 31);
   -moz-box-shadow: 0px 1px 14px 8px rgb(20, 21, 31);
   box-shadow: 0px 1px 14px 8px rgb(20, 21, 31);
-  z-index: 1;
+  z-index: 3;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
@@ -170,28 +170,36 @@ header .menu {
 /*ssssssssssssssssssssssssssssssssss */
 @media screen and (max-width: 678px) {
   .slider .list .item .content h2 {
+    position: unset;
     font-size: 40px;
     line-height: 50px;
-    padding-top: 20px;
+    padding-top: 10px;
   }
+  .slider .list .item {
+    margin-top: 40px;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    flex-direction: column;
+    position: unset;
+    gap: 20px;
+  }
+
   .slider .list .item .content p {
     font-size: 14px;
-    padding-top: 20px;
+    padding-top: 10px;
   }
   .slider .list .item .content {
-    bottom: 0;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 10%;
-    width: 700px;
-    max-width: 95%;
-    z-index: 1;
+    position: unset;
+    top: 5%;
+    padding-top: 0;
   }
   .arrows {
     width: 90px;
     height: 90px;
-    top: 45%;
+    top: 48%;
     bottom: 0;
     margin: auto;
     left: 0;
@@ -204,13 +212,11 @@ header .menu {
     font-size: 30px;
   }
   .pic {
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    left: 0;
-    right: 0;
-    width: 250px;
-    height: 250px;
+    margin-top: 20px;
+    position: unset;
+    opacity: 1;
+    width: 280px;
+    height: 280px;
   }
 }
 @media screen and (min-width: 679px) and (max-width: 1280px) {
@@ -228,9 +234,9 @@ header .menu {
   .slider .list .item .content {
     left: 10%;
     top: 20%;
-    width: 500px;
+    width: 450px;
     max-width: 80%;
-    z-index: 1;
+    z-index: 2;
   }
   .arrows {
     top: 62%;
@@ -250,8 +256,9 @@ header .menu {
   .pic {
     top: 15%;
     margin: auto;
-    left: 48%;
+    left: 55%;
     width: 350px;
     height: 350px;
+    margin-right: 10px;
   }
 }
