@@ -209,6 +209,7 @@ export const Home = () => {
   const nextSlide = () => {
     setPicOpacity(0);
     setItemActive((prev) => (prev + 1) % images.length);
+    
   };
 
   const prevSlide = () => {
