@@ -2,10 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
 import { Loader } from "../Loader/Loader";
 
-import znak from "../../graphics/znak.png";
-import lewoh from "../../graphics/lewo_h.png";
-import prawoh from "../../graphics/prawo_h.png";
-
 import soma from "../../graphics/soma-min.webp";
 import ciemnosc from "../../graphics/ciemnosc-min.webp";
 import drapieznik from "../../graphics/drapieznik-min.webp";
@@ -36,12 +32,12 @@ import ustaDemo from "./audio/usta_demo.mp3";
 
 const images = [
   {
-    src: naksiezycu,
-    title: "Na Księżycu",
+    src: nietrawie,
+    title: "Nie Trawię",
     track: "Track 1",
     description:
-      "Wybierzmy się do lasu - cisza, pustka, spokój. Albo może gdzieś dalej..?",
-    audio: naksiezycuDemo,
+      "Ileż można tego słuchać? Wsciskają nam kit do uszu, oczu i cholera wie gdzie jeszcze. Aż do porzygu.",
+    audio: niewygramDemo,
   },
   {
     src: urojenia,
@@ -113,12 +109,12 @@ const images = [
     audio: niewygramDemo,
   },
   {
-    src: nietrawie,
-    title: "Nie Trawię",
+    src: naksiezycu,
+    title: "Na Księżycu",
     track: "Track 11",
     description:
-      "Ileż można tego słuchać? Wsciskają nam kit do uszu, oczu i cholera wie gdzie jeszcze. Aż do porzygu.",
-    audio: niewygramDemo,
+      "Wybierzmy się do lasu - cisza, pustka, spokój. Albo może gdzieś dalej..?",
+    audio: naksiezycuDemo,
   },
   {
     src: zaczyna,
@@ -168,6 +164,8 @@ export const Home = () => {
   const [backgroundOpacity, setBackgroundOpacity] = useState(1);
   const [picOpacity, setPicOpacity] = useState(1);
   const intervalRef = useRef<number | null>(null);
+  const [isWelcomeVisible, setIsWelcomeVisible] = useState(true); // Ekran powitalny jest widoczny na start
+  const [isSliderVisible, setIsSliderVisible] = useState(false);
 
   useEffect(() => {
     resetInterval(); // Ustaw interwał na początku
@@ -184,7 +182,8 @@ export const Home = () => {
     const activeImage = images[itemActive];
     const audioFile = activeImage.audio;
 
-    if (audioRef.current) {
+    // Dodajemy warunek, że audio odtwarzamy tylko, jeśli slider jest widoczny i ekran powitalny jest ukryty
+    if (isSliderVisible && !isWelcomeVisible && audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
       audioRef.current.src = audioFile;
@@ -202,16 +201,16 @@ export const Home = () => {
       setBackgroundImage(activeImage.src);
       setBackgroundOpacity(1); // Ustaw opacity na 1 po zmianie tła
 
-      // Nowy timeout, aby pokazać obraz po ustawieniu tła
+      // Teraz czekaj, aż tło stanie się przezroczyste przed przełączeniem obrazu
       const picTimeoutId = setTimeout(() => {
-        setPicOpacity(1); // Ustaw opacity obrazu na 1 po 50ms
-      }, 100); // Krótkie opóźnienie przed pokazaniem obrazu
+        setPicOpacity(1); // Ustaw opacity obrazu na 1
+      }, 50); // Ustaw opóźnienie, aby uniknąć natychmiastowego wyświetlenia
 
       return () => clearTimeout(picTimeoutId); // Czyszczenie timeoutu dla obrazu
-    }, 600); // Opóźnienie na czas przejścia (500ms)
+    }, 500); // Opóźnienie na czas przejścia (500ms)
 
     return () => clearTimeout(timeoutId); // Upewnij się, że timeout jest czyszczony
-  }, [itemActive]);
+  }, [itemActive, isSliderVisible, isWelcomeVisible]); // Dodajemy `isWelcomeVisible` jako zależność
 
   const resetInterval = () => {
     if (intervalRef.current) {
@@ -244,71 +243,98 @@ export const Home = () => {
 
   // Loader dla obrazków
   useEffect(() => {
-    const handleLoad = () => setIsLoading(false);
+    if (isLoading) {
+      const handleLoad = () => {
+        setIsLoading(false);
+        setIsSliderVisible(true); // Po załadowaniu obrazków wyświetl slider
+      };
 
-    const imgs = document.querySelectorAll("img");
-    const promises = Array.from(imgs).map((img) => {
-      return new Promise<void>((resolve) => {
-        if (img.complete) resolve();
-        else {
-          img.addEventListener("load", () => resolve());
-          img.addEventListener("error", () => resolve());
-        }
+      const imgs = document.querySelectorAll("img");
+      const promises = Array.from(imgs).map((img) => {
+        return new Promise<void>((resolve) => {
+          if (img.complete) resolve();
+          else {
+            img.addEventListener("load", () => resolve());
+            img.addEventListener("error", () => resolve());
+          }
+        });
       });
-    });
 
-    Promise.all(promises).then(handleLoad);
+      Promise.all(promises).then(handleLoad);
 
-    return () => {
-      imgs.forEach((img) => {
-        img.removeEventListener("load", handleLoad);
-        img.removeEventListener("error", handleLoad);
-      });
-    };
-  }, []);
+      return () => {
+        imgs.forEach((img) => {
+          img.removeEventListener("load", handleLoad);
+          img.removeEventListener("error", handleLoad);
+        });
+      };
+    }
+  }, [isLoading]);
+
+  const startLoading = () => {
+    setIsWelcomeVisible(false); // Ukryj ekran powitalny
+    setIsLoading(true); // Uruchom loader
+  };
 
   return (
     <div style={{ position: "relative" }}>
-      <div
-        className="background"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          opacity: backgroundOpacity,
-          transition: "opacity 0.5s ease-in-out",
-        }}
-      />
-      {isLoading ? (
+      {isWelcomeVisible ? (
+        // Ekran powitalny
+        <div className="welcome-screen">
+          <button className="start-button" onClick={startLoading}>
+            <h1 className="logo">dzika swinia</h1>
+          </button>
+        </div>
+      ) : isLoading ? (
+        // Loader po kliknięciu przycisku
         <Loader />
       ) : (
-        <div className="slider">
-          <div className="list">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className={`item ${index === itemActive ? "active" : ""}`}
-              >
-                <img
-                  className="pic"
-                  src={image.src}
-                  alt={image.title}
-                  style={{
-                    opacity: picOpacity,
-                    transition: "opacity 0.5s ease-in-out", // Dodanie efektu przejścia
-                  }}
-                />
-                <div className="content">
-                  <p>{image.track}</p>
-                  <h2>{image.title}</h2>
-                  <p>{image.description}</p>
-                </div>
+        // Slider po załadowaniu obrazków
+        isSliderVisible && (
+          <div>
+            <div
+              className="background"
+              style={{
+                backgroundImage: `url(${backgroundImage})`,
+                opacity: backgroundOpacity,
+                transition: "opacity 0.5s ease-in-out",
+              }}
+            />
+            <div className="slider">
+              <div className="list">
+                {images.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`item ${index === itemActive ? "active" : ""}`}
+                  >
+                    <img
+                      className="pic"
+                      src={image.src}
+                      alt={image.title}
+                      style={{
+                        opacity: picOpacity,
+                        transition: "opacity 0.5s ease-in-out", // Dodanie efektu przejścia
+                      }}
+                    />
+                    <div className="content">
+                      <p>{image.track}</p>
+                      <h2>{image.title}</h2>
+                      <p>{image.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-            <div className="arrows">
-              <button id="prev" onClick={handlePrev}></button>
-              <button id="next" onClick={handleNext}></button>
+              <div className="arrows">
+                <button id="prev" onClick={handlePrev}>
+                  poprzedni
+                </button>
+                <button id="next" onClick={handleNext}>
+                  nastepny
+                </button>
+              </div>
             </div>
           </div>
+        )
       )}
       <audio ref={audioRef} />
     </div>
