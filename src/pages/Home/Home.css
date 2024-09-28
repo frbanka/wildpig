@@ -140,26 +140,46 @@ header .menu {
 .arrows {
   position: absolute;
   display: flex;
-  gap: 10px;
-  top: 65%;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  top: 70%;
   right: 50%;
-  z-index: 100;
+  z-index: 60;
+}
+.arrows_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .arrows button {
-  background-color: rgba(238, 238, 238, 0);
+  background: none;
   border: none;
-  font-family: monospace;
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
-  font-size: 20px;
-  color: #eee;
-  transition: 0.5s;
+  width: 150px;
+  height: 65px;
+  transition: all 0.5s;
+  z-index: 6;
+  background-image: url(../../graphics/lewo.png);
 }
 .arrows button:hover {
-  background-color: #eee;
+  background-image: url(../../graphics/lewo.png);
   color: black;
+  transition: all 0.5s;
 }
+#prev {
+  position: absolute;
+  transition: all 0.5s;
+  background-position: center;
+  background-size: cover;
+  z-index: 7;
+}
+#next {
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  z-index: 7;
+}
+
 /*ssssssssssssssssssssssssssssssssss */
 .slider {
   position: relative;

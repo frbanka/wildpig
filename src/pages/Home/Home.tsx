@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
 import { Loader } from "../Loader/Loader";
+
+import znak from "../../graphics/znak.png";
+import lewoh from "../../graphics/lewo_h.png";
+import prawoh from "../../graphics/prawo_h.png";
+
 import soma from "../../graphics/soma-min.webp";
 import ciemnosc from "../../graphics/ciemnosc-min.webp";
 import drapieznik from "../../graphics/drapieznik-min.webp";
@@ -162,14 +167,16 @@ export const Home = () => {
   const [backgroundImage, setBackgroundImage] = useState(images[0].src);
   const [backgroundOpacity, setBackgroundOpacity] = useState(1);
   const [picOpacity, setPicOpacity] = useState(1);
+  const intervalRef = useRef<number | null>(null);
 
-  // Slider auto-rotate
   useEffect(() => {
-    let refreshInterval = setInterval(() => {
-      nextSlide();
-    }, 15000); // Automatyczne przewijanie co 15 sekund
+    resetInterval(); // Ustaw interwał na początku
 
-    return () => clearInterval(refreshInterval); // Czyszczenie po unmount
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current); // Czyści interwał po unmount
+      }
+    };
   }, []);
 
   // Załaduj audio i zmień zdjęcie na aktywne
@@ -206,15 +213,33 @@ export const Home = () => {
     return () => clearTimeout(timeoutId); // Upewnij się, że timeout jest czyszczony
   }, [itemActive]);
 
+  const resetInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current); // Czyści bieżący interwał
+    }
+    intervalRef.current = window.setInterval(() => {
+      nextSlide();
+    }, 15000); // Ustawia nowy interwał
+  };
+
   const nextSlide = () => {
     setPicOpacity(0);
     setItemActive((prev) => (prev + 1) % images.length);
-    
   };
 
   const prevSlide = () => {
     setPicOpacity(0);
     setItemActive((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleNext = () => {
+    nextSlide();
+    resetInterval(); // Resetuj interwał po ręcznej zmianie slajdu
+  };
+
+  const handlePrev = () => {
+    prevSlide();
+    resetInterval(); // Resetuj interwał po ręcznej zmianie slajdu
   };
 
   // Loader dla obrazków
@@ -279,15 +304,11 @@ export const Home = () => {
               </div>
             ))}
           </div>
-          <div className="arrows">
-            <button id="prev" onClick={prevSlide}>
-              ←
-            </button>
-            <button id="next" onClick={nextSlide}>
-              →
-            </button>
+            <div className="arrows">
+              <button id="prev" onClick={handlePrev}></button>
+              <button id="next" onClick={handleNext}></button>
+            </div>
           </div>
-        </div>
       )}
       <audio ref={audioRef} />
     </div>
