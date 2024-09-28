@@ -166,6 +166,16 @@ export const Home = () => {
   const intervalRef = useRef<number | null>(null);
   const [isWelcomeVisible, setIsWelcomeVisible] = useState(true); // Ekran powitalny jest widoczny na start
   const [isSliderVisible, setIsSliderVisible] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    // Dodajemy klasę `animated` po krótkim opóźnieniu
+    const timer = setTimeout(() => {
+      setIsAnimated(true);
+    }, 700); // Opóźnienie, aby logo się "pojawiło" po otwarciu strony
+
+    return () => clearTimeout(timer); // Czyszczenie timer'a przy odmontowaniu komponentu
+  }, []);
 
   useEffect(() => {
     resetInterval(); // Ustaw interwał na początku
@@ -282,7 +292,9 @@ export const Home = () => {
         // Ekran powitalny
         <div className="welcome-screen">
           <button className="start-button" onClick={startLoading}>
-            <h1 className="logo">dzika swinia</h1>
+            <h1 className={`logo ${isAnimated ? "animated" : ""}`}>
+              dzika swinia
+            </h1>
           </button>
         </div>
       ) : isLoading ? (

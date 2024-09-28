@@ -226,11 +226,17 @@ header .menu {
   font-family: dzikaswinia;
   cursor: pointer;
   color: #fff;
-  transition: all 0.5s;
-  animation: neon-blink 4s infinite alternate;
+  opacity: 0; /* Domyślnie niewidoczne */
+  filter: blur(20px); /* Początkowy blur */
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Przejścia dla hover */
+}
+
+.logo.animated {
+  opacity: 1; /* Ustaw widoczność */
+  filter: blur(0); /* Usuń blur */
+  animation: showContent 0.5s ease-in-out 1 forwards; /* Jednorazowa animacja */
 }
 .logo:hover {
-  transition: all 0.5s;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
