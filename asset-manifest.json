@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5936f9cd.css",
-    "main.js": "/static/js/main.28e870d4.js",
+    "main.css": "/static/css/main.6790cc2f.css",
+    "main.js": "/static/js/main.d41d85f8.js",
     "static/js/453.281639a3.chunk.js": "/static/js/453.281639a3.chunk.js",
     "static/media/dzika_demo.mp3": "/static/media/dzika_demo.0eac38988d547293868d.mp3",
     "static/media/ciemnosc_demo.mp3": "/static/media/ciemnosc_demo.a544194d6209e2291632.mp3",
@@ -12,11 +12,12 @@
     "static/media/piekno_demo.mp3": "/static/media/piekno_demo.649324b8ea2d47d110cb.mp3",
     "static/media/pozar_demo.mp3": "/static/media/pozar_demo.c8477cabf0c1a0ffc9d4.mp3",
     "static/media/usta_demo.mp3": "/static/media/usta_demo.e60e798a31152ee20c98.mp3",
+    "static/media/urojenia-min.webp": "/static/media/urojenia-min.521a12c413dab0f07d64.webp",
     "static/media/piekno.webp": "/static/media/piekno.6b32d372dfa9b768a90e.webp",
     "static/media/ciemnosc-min.webp": "/static/media/ciemnosc-min.c072dd7447fea0b4d212.webp",
     "static/media/urojenia_demo.mp3": "/static/media/urojenia_demo.b0cc543bd6ff93778949.mp3",
-    "static/media/zaczyna-min.webp": "/static/media/zaczyna-min.7607d341e7a622b96af6.webp",
     "static/media/ciemnosc-th.png": "/static/media/ciemnosc-th.d172655181c476b92475.png",
+    "static/media/zaczyna-min.webp": "/static/media/zaczyna-min.8584fb91b4b04f89228f.webp",
     "static/media/pozar-min.webp": "/static/media/pozar-min.d4f707556a75339f813a.webp",
     "static/media/usta-min.webp": "/static/media/usta-min.8d592a7b46eb84aca401.webp",
     "static/media/nietrawie-min.webp": "/static/media/nietrawie-min.3cc6066d385cae887324.webp",
@@ -28,16 +29,15 @@
     "static/media/pierwszy-min.webp": "/static/media/pierwszy-min.0d2d71fe65b9583e6139.webp",
     "static/media/strach-min.webp": "/static/media/strach-min.caea940b7e144fba1d56.webp",
     "static/media/naksiezycu-min.webp": "/static/media/naksiezycu-min.073cfb69a33ac44b6e10.webp",
-    "static/media/urojenia-min.webp": "/static/media/urojenia-min.5d21b510c3077c87c7c5.webp",
     "static/media/soma-min.webp": "/static/media/soma-min.13accfe4378e40eab484.webp",
     "static/media/crazy.TTF": "/static/media/crazy.dea0d41cc1895248c667.TTF",
     "index.html": "/index.html",
-    "main.5936f9cd.css.map": "/static/css/main.5936f9cd.css.map",
-    "main.28e870d4.js.map": "/static/js/main.28e870d4.js.map",
+    "main.6790cc2f.css.map": "/static/css/main.6790cc2f.css.map",
+    "main.d41d85f8.js.map": "/static/js/main.d41d85f8.js.map",
     "453.281639a3.chunk.js.map": "/static/js/453.281639a3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5936f9cd.css",
-    "static/js/main.28e870d4.js"
+    "static/css/main.6790cc2f.css",
+    "static/js/main.d41d85f8.js"
   ]
 }
