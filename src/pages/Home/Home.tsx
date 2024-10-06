@@ -29,6 +29,12 @@ import dzikaDemo from "./audio/dzika_demo.mp3";
 import niewygramDemo from "./audio/niewygram_demo.mp3";
 import pieknoDemo from "./audio/piekno_demo.mp3";
 import ustaDemo from "./audio/usta_demo.mp3";
+import pierwszyDemo from "./audio/pierwszy_demo.mp3";
+import somaDemo from "./audio/soma_demo.mp3";
+import pienDemo from "./audio/pien_demo.mp3";
+import zaczynaDemo from "./audio/zaczyna_demo.mp3";
+import nietrawieDemo from "./audio/nietrawie_demo.mp3";
+import strachDemo from "./audio/strach_demo.mp3";
 
 const images = [
   {
@@ -37,7 +43,7 @@ const images = [
     track: "Track 1",
     description:
       "Ileż można tego słuchać? Wsciskają nam kit do uszu, oczu i cholera wie gdzie jeszcze. Aż do porzygu.",
-    audio: niewygramDemo,
+    audio: nietrawieDemo,
   },
   {
     src: urojenia,
@@ -60,7 +66,7 @@ const images = [
     title: "W Dymie Jest Ogień",
     track: "Track 4",
     description:
-      "Co zacząłeś - dokończ. Nie zostawiaj za sobą niczego. Twoje czyny to Twój ciężar.",
+      "Co zacząłeś to dokończ. Nie zostawiaj za sobą niczego. Twoje czyny to Twój ciężar.",
     audio: dymDemo,
   },
   {
@@ -68,7 +74,7 @@ const images = [
     title: "Dzika Świnia",
     track: "Track 5",
     description:
-      "Czy wystarczy biec przed siebie, by dobiec do celu? Pamiętaj, że Ziemia jest okrągła..",
+      "Czy wystarczy biec przed siebie, by dobiec do celu? Pamiętaj, że Ziemia jest okrągła.",
     audio: dzikaDemo,
   },
   {
@@ -76,7 +82,7 @@ const images = [
     title: "Drapieżnik",
     track: "Track 6",
     description:
-      "Uważaj, żeby Ciebie ktoś nie zjadł. Każdy jest czyimś pożywieniem.",
+      "Uważaj, żeby i Ciebie ktoś nie zjadł. Każdy jest czyimś pożywieniem.",
     audio: drapieznikDemo,
   },
   {
@@ -84,28 +90,28 @@ const images = [
     title: "Ciemność",
     track: "Track 7",
     description:
-      "Nigdy nie wiesz kiedy na Ciebie spadnie. I pochłonie Cię całego.",
+      "Nigdy nie wiesz kiedy na Ciebie spadnie i pochłonie Cię całego.",
     audio: ciemnoscDemo,
   },
   {
     src: usta,
-    title: "Usta Szeroko Otwarte",
+    title: "Usta Szeroko Otwarte (Live)",
     track: "Track 8",
-    description: "Czasem to po prostu za dużo słów..",
+    description: "W lesie ma być cisza! Szanuj przyrodę i innych. Ale śpiewaj z Nami!",
     audio: ustaDemo,
   },
   {
     src: piekno,
     title: "Piękno",
     track: "Track 9",
-    description: "Zero ironii. Czyste piękno.",
+    description: "To nie jest ironia. To czyste piękno. Twoje piękno.",
     audio: pieknoDemo,
   },
   {
     src: niewygram,
     title: "Nie Wygram",
     track: "Track 10",
-    description: "Cokolwiek nie zrobisz - jesteś skazany na porażkę.",
+    description: "Cokolwiek nie zrobisz i tak jesteś skazany na porażkę. Jesteś swoim największym wrogiem.",
     audio: niewygramDemo,
   },
   {
@@ -120,39 +126,39 @@ const images = [
     src: zaczyna,
     title: "Zaczyna Padać",
     track: "Track 12",
-    description: "Nikomu niepotrzebny deszcz - jak my sami.",
-    audio: niewygramDemo,
+    description: "Nikomu niepotrzebny deszcz. Tak jak my sami.",
+    audio: zaczynaDemo,
   },
   {
     src: strach,
     title: "Strach",
     track: "Track 13",
-    description: "Wszystkiego się boisz. I dobrze.",
-    audio: niewygramDemo,
+    description: "Wszystkiego się trzeba bać. Uwierz, że tak jest lepiej.",
+    audio: strachDemo,
   },
   {
     src: pien,
     title: "Pień",
     track: "Track 14",
     description:
-      "Upadamy każdego dnia - podobno. Czy ktoś zechce nas podnieść? I ponieść? A może po prostu - wykorzystać..",
-    audio: niewygramDemo,
+      "Podobno upadamy każdego dnia. Czy ktoś zechce nas podnieść?",
+    audio: pienDemo,
   },
   {
     src: soma,
     title: "SOMA",
     track: "Track 15",
     description:
-      "Kiedy wydaje Ci się, że w życiu masz nad wszystkim kontrolę.. Nad sobą. Na pewno.",
-    audio: niewygramDemo,
+      "Kiedy wydaje Ci się, że w życiu masz nad wszystkim kontrolę.. Nad sobą.. Na pewno.",
+    audio: somaDemo,
   },
   {
     src: pierwszy,
     title: "Pierwszy i Ostatni",
     track: "Track 16",
     description:
-      "Czy w tym wyścigu szczurów (królików..?) naprawdę chcesz być na czele? Kto wygra ze sztuczną inteligencją?",
-    audio: niewygramDemo,
+      "Czy w tym wyścigu szczurów (królików..?) naprawdę chcesz być na czele? Kto wygra ze sztucznością?",
+    audio: pierwszyDemo,
   },
 ];
 
@@ -228,7 +234,7 @@ export const Home = () => {
     }
     intervalRef.current = window.setInterval(() => {
       nextSlide();
-    }, 15000); // Ustawia nowy interwał
+    }, 16000); // Ustawia nowy interwał
   };
 
   const nextSlide = () => {
