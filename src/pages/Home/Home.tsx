@@ -58,7 +58,7 @@ const images = [
     title: "Pożar",
     track: "Track 3",
     description:
-      "Z prochu powstałeś i w proch się obrócisz. Chyba, że to Ty trzymasz zapałki..!?",
+      "Z prochu powstałeś i w proch się obrócisz! No chyba, że to Ty trzymasz zapałki..",
     audio: pozarDemo,
   },
   {
@@ -66,7 +66,7 @@ const images = [
     title: "W Dymie Jest Ogień",
     track: "Track 4",
     description:
-      "Co zacząłeś to dokończ. Nie zostawiaj za sobą niczego. Twoje czyny to Twój ciężar.",
+      "Czy zawsze kończysz to co zaczynasz? Nie zostawiaj za sobą niczego, bo Twoje czyny to Twój ciężar.",
     audio: dymDemo,
   },
   {
@@ -74,15 +74,14 @@ const images = [
     title: "Dzika Świnia",
     track: "Track 5",
     description:
-      "Czy wystarczy biec przed siebie, by dobiec do celu? Pamiętaj, że Ziemia jest okrągła.",
+      "Czy wystarczy biec przed siebie, by dobiec do celu? Pamiętaj tylko, że Ziemia jest okrągła.",
     audio: dzikaDemo,
   },
   {
     src: drapieznik,
     title: "Drapieżnik",
     track: "Track 6",
-    description:
-      "Uważaj, żeby i Ciebie ktoś nie zjadł. Każdy jest czyimś pożywieniem.",
+    description: "Uważaj kogo próbujesz zjeść. Każdy jest czyimś pożywieniem..",
     audio: drapieznikDemo,
   },
   {
@@ -90,14 +89,15 @@ const images = [
     title: "Ciemność",
     track: "Track 7",
     description:
-      "Nigdy nie wiesz kiedy na Ciebie spadnie i pochłonie Cię całego.",
+      "Nigdy nie wiesz kiedy pojawi się w Twoim życiu coś bardzo mrocznego. Co wtedy zrobisz?",
     audio: ciemnoscDemo,
   },
   {
     src: usta,
     title: "Usta Szeroko Otwarte (Live)",
     track: "Track 8",
-    description: "W lesie ma być cisza! Szanuj przyrodę i innych. Ale śpiewaj z Nami!",
+    description:
+      "W lesie obowiązuje cisza! Szanuj przyrodę. Ale śpiewaj zawsze głośno!",
     audio: ustaDemo,
   },
   {
@@ -111,7 +111,8 @@ const images = [
     src: niewygram,
     title: "Nie Wygram",
     track: "Track 10",
-    description: "Cokolwiek nie zrobisz i tak jesteś skazany na porażkę. Jesteś swoim największym wrogiem.",
+    description:
+      "Cokolwiek nie zrobisz i tak jesteś skazany na porażkę. Jesteś swoim największym wrogiem.",
     audio: niewygramDemo,
   },
   {
@@ -140,8 +141,7 @@ const images = [
     src: pien,
     title: "Pień",
     track: "Track 14",
-    description:
-      "Podobno upadamy każdego dnia. Czy ktoś zechce nas podnieść?",
+    description: "Podobno upadamy każdego dnia. Czy ktoś zechce nas podnieść?",
     audio: pienDemo,
   },
   {

@@ -78,16 +78,16 @@ header .menu {
 }
 .slider .list .item .content {
   position: absolute;
-  left: 8%;
-  top: 15%;
-  width: 580px;
+  left: 15%;
+  top: 13%;
+  width: 570px;
   max-width: 75%;
   z-index: 2;
 }
 .pic {
   position: absolute;
   opacity: 1;
-  left: 55%;
+  left: 60%;
   top: 12%;
   width: 400px;
   height: 400px;
@@ -104,7 +104,7 @@ header .menu {
   letter-spacing: 10px;
 }
 .slider .list .item .content h2 {
-  font-size: 80px;
+  font-size: 70px;
   line-height: 80px;
   padding-top: 35px;
   margin: 0;
@@ -181,6 +181,8 @@ header .menu {
   top: 65%;
   right: 50%;
   z-index: 60;
+  left: 0;
+  right: 0;
 }
 .arrows button {
   background: none;
@@ -265,6 +267,7 @@ header .menu {
     padding-top: 20px;
     flex-direction: column;
     position: unset;
+    z-index: 5;
     gap: 20px;
   }
 
@@ -274,13 +277,14 @@ header .menu {
   }
   .slider .list .item .content {
     position: unset;
+    z-index: 5;
     top: 5%;
-    padding-top: 20px;
+    padding-top: 10px;
   }
   .arrows {
     width: 90px;
     height: 90px;
-    top: 45%;
+    top: 50%;
     bottom: 0;
     margin: auto;
     left: 0;
@@ -308,13 +312,13 @@ header .menu {
     padding-top: 40px;
   }
   .slider .list .item .content p {
-    font-size: 15px;
+    font-size: 13px;
     text-align: left;
     padding-top: 40px;
   }
   .slider .list .item .content {
     left: 10%;
-    top: 15%;
+    top: 10%;
     width: 400px;
     max-width: 40%;
     z-index: 2;
@@ -341,5 +345,14 @@ header .menu {
     width: 320px;
     height: 320px;
     margin-right: 10px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .slider .list .item .content {
+    left: 22%;
+    top: 14%;
+    width: 600px;
+    max-width: 40%;
+    z-index: 2;
   }
 }
