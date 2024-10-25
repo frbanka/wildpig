@@ -18,6 +18,7 @@ import nietrawie from "../../graphics/nietrawie-min.webp";
 import pierwszy from "../../graphics/pierwszy-min.webp";
 import piekno from "../../graphics/piekno.webp";
 import niewygram from "../../graphics/niewygram-min.webp";
+import zabijam from "../../graphics/zabijam-min.webp";
 
 import naksiezycuDemo from "./audio/naksiezycu_demo.mp3";
 import urojeniaDemo from "./audio/urojenia_demo.mp3";
@@ -35,6 +36,7 @@ import pienDemo from "./audio/pien_demo.mp3";
 import zaczynaDemo from "./audio/zaczyna_demo.mp3";
 import nietrawieDemo from "./audio/nietrawie_demo.mp3";
 import strachDemo from "./audio/strach_demo.mp3";
+import zabijamDemo from "./audio/zabijam.mp3";
 
 const images = [
   {
@@ -42,7 +44,7 @@ const images = [
     title: "Nie Trawię",
     track: "Track 1",
     description:
-      "Ileż można tego słuchać? Wsciskają nam kit do uszu, oczu i cholera wie gdzie jeszcze. Aż do porzygu.",
+      "Ileż można słuchać tych bzdur. Wsciskają nam kit do uszu i oczu. Aż do porzygu.",
     audio: nietrawieDemo,
   },
   {
@@ -93,12 +95,12 @@ const images = [
     audio: ciemnoscDemo,
   },
   {
-    src: usta,
-    title: "Usta Szeroko Otwarte (Live)",
+    src: zabijam,
+    title: "Zabijam Płomień",
     track: "Track 8",
     description:
-      "W lesie obowiązuje cisza! Szanuj przyrodę. Ale śpiewaj zawsze głośno!",
-    audio: ustaDemo,
+      "Czas skończyć z tym całym bagnem. Zostawmy przeszłość za sobą.",
+    audio: zabijamDemo,
   },
   {
     src: piekno,
