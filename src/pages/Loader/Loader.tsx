@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Loader.css";
-import img from "../../graphics/ciemnosc-th.png";
+import img from "../../graphics/ciemnosc-min.webp";
 export const Loader = () => {
   const [progress, setProgress] = useState(0);
 

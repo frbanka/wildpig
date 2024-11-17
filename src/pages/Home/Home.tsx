@@ -8,6 +8,7 @@ import drapieznik from "../../graphics/drapieznik-min.webp";
 import strach from "../../graphics/strach-min.webp";
 import naksiezycu from "../../graphics/naksiezycu-min.webp";
 import usta from "../../graphics/usta-min.webp";
+import wladca from "../../graphics/wladca-min.webp";
 import dzikaswinia from "../../graphics/dzikaswinia-min.webp";
 import pozar from "../../graphics/pozar-min.webp";
 import pien from "../../graphics/pien-min.webp";
@@ -16,9 +17,11 @@ import wdymie from "../../graphics/wdymie-min.webp";
 import zaczyna from "../../graphics/zaczyna-min.webp";
 import nietrawie from "../../graphics/nietrawie-min.webp";
 import pierwszy from "../../graphics/pierwszy-min.webp";
-import piekno from "../../graphics/piekno.webp";
+import piekno from "../../graphics/piekno-min.webp";
 import niewygram from "../../graphics/niewygram-min.webp";
 import zabijam from "../../graphics/zabijam-min.webp";
+import naprawo from "../../graphics/naprawo-min.webp";
+import trzytrzy from "../../graphics/33-min.webp";
 
 import naksiezycuDemo from "./audio/naksiezycu_demo.mp3";
 import urojeniaDemo from "./audio/urojenia_demo.mp3";
@@ -43,124 +46,127 @@ const images = [
     src: nietrawie,
     title: "Nie Trawię",
     track: "Track 1",
-    description:
-      "Ileż można słuchać tych bzdur. Wsciskają nam kit do uszu i oczu. Aż do porzygu.",
+    description: "Jestem głodny dziś jak Wilk.",
     audio: nietrawieDemo,
-  },
-  {
-    src: urojenia,
-    title: "Urojenia",
-    track: "Track 2",
-    description:
-      "Chcesz wierzyć w to, co jest Ci narzucane? Proszę bardzo. Szukaj szczęścia dalej.",
-    audio: urojeniaDemo,
-  },
-  {
-    src: pozar,
-    title: "Pożar",
-    track: "Track 3",
-    description:
-      "Z prochu powstałeś i w proch się obrócisz! No chyba, że to Ty trzymasz zapałki..",
-    audio: pozarDemo,
   },
   {
     src: wdymie,
     title: "W Dymie Jest Ogień",
-    track: "Track 4",
-    description:
-      "Czy zawsze kończysz to co zaczynasz? Nie zostawiaj za sobą niczego, bo Twoje czyny to Twój ciężar.",
+    track: "Track 2",
+    description: "..a w duszy jest strach..",
+    audio: dymDemo,
+  },
+  {
+    src: wladca,
+    title: "Władca Much",
+    track: "Track 3",
+    description: "Wyznaj mi grzechy.",
     audio: dymDemo,
   },
   {
     src: dzikaswinia,
     title: "Dzika Świnia",
-    track: "Track 5",
-    description:
-      "Czy wystarczy biec przed siebie, by dobiec do celu? Pamiętaj tylko, że Ziemia jest okrągła.",
+    track: "Track 4",
+    description: "Znikam za każdym pniem.",
     audio: dzikaDemo,
   },
   {
     src: drapieznik,
     title: "Drapieżnik",
-    track: "Track 6",
-    description: "Uważaj kogo próbujesz zjeść. Każdy jest czyimś pożywieniem..",
+    track: "Track 5",
+    description: "Jesteś tylko drapieżnikiem.",
     audio: drapieznikDemo,
-  },
-  {
-    src: ciemnosc,
-    title: "Ciemność",
-    track: "Track 7",
-    description:
-      "Nigdy nie wiesz kiedy pojawi się w Twoim życiu coś bardzo mrocznego. Co wtedy zrobisz?",
-    audio: ciemnoscDemo,
-  },
-  {
-    src: zabijam,
-    title: "Zabijam Płomień",
-    track: "Track 8",
-    description:
-      "Czas skończyć z tym całym bagnem. Zostawmy przeszłość za sobą.",
-    audio: zabijamDemo,
-  },
-  {
-    src: piekno,
-    title: "Piękno",
-    track: "Track 9",
-    description: "To nie jest ironia. To czyste piękno. Twoje piękno.",
-    audio: pieknoDemo,
-  },
-  {
-    src: niewygram,
-    title: "Nie Wygram",
-    track: "Track 10",
-    description:
-      "Cokolwiek nie zrobisz i tak jesteś skazany na porażkę. Jesteś swoim największym wrogiem.",
-    audio: niewygramDemo,
   },
   {
     src: naksiezycu,
     title: "Na Księżycu",
-    track: "Track 11",
-    description:
-      "Wybierzmy się do lasu - cisza, pustka, spokój. Albo może gdzieś dalej..?",
+    track: "Track 6",
+    description: "W ciemności wiecznej pustki.",
     audio: naksiezycuDemo,
+  },
+  {
+    src: piekno,
+    title: "Piękno",
+    track: "Track 7",
+    description: "Co skrywa Twoja wiara, co kryje Twe spojrzenie?",
+    audio: pieknoDemo,
   },
   {
     src: zaczyna,
     title: "Zaczyna Padać",
-    track: "Track 12",
-    description: "Nikomu niepotrzebny deszcz. Tak jak my sami.",
+    track: "Track 8",
+    description: "Błądziliśmy pod słońcem sami..",
     audio: zaczynaDemo,
   },
   {
     src: strach,
     title: "Strach",
-    track: "Track 13",
-    description: "Wszystkiego się trzeba bać. Uwierz, że tak jest lepiej.",
+    track: "Track 9",
+    description: "To nie strach, to zbawienie.",
     audio: strachDemo,
+  },
+  {
+    src: zabijam,
+    title: "Zabijam Płomień",
+    track: "Track 10",
+    description: "Łamiesz obietnice swe..",
+    audio: zabijamDemo,
   },
   {
     src: pien,
     title: "Pień",
-    track: "Track 14",
-    description: "Podobno upadamy każdego dnia. Czy ktoś zechce nas podnieść?",
+    track: "Track 11",
+    description: "Jesteś tylko pniem.",
+    audio: pienDemo,
+  },
+  {
+    src: trzytrzy,
+    title: "33",
+    track: "Track 12",
+    description: "Jeden, dwa, trzy.",
     audio: pienDemo,
   },
   {
     src: soma,
     title: "SOMA",
-    track: "Track 15",
-    description:
-      "Kiedy wydaje Ci się, że w życiu masz nad wszystkim kontrolę.. Nad sobą.. Na pewno.",
+    track: "Track 13",
+    description: "Wszystko zaczyna i kończy się w głowie",
     audio: somaDemo,
   },
   {
     src: pierwszy,
     title: "Pierwszy i Ostatni",
-    track: "Track 16",
-    description:
-      "Czy w tym wyścigu szczurów (królików..?) naprawdę chcesz być na czele? Kto wygra ze sztucznością?",
+    track: "Track 14",
+    description: "Kto pierwszy - ten lepszy.",
     audio: pierwszyDemo,
+  },
+  {
+    src: pozar,
+    title: "Pożar",
+    track: "Bonus Track",
+    description: "Pali się cały świat.",
+    audio: pozarDemo,
+  },
+  {
+    src: niewygram,
+    title: "Nie Wygram",
+    track: "Bonus Track",
+    description: "Bo mam siebie.",
+    audio: niewygramDemo,
+  },
+  {
+    src: urojenia,
+    title: "Urojenia",
+    track: "Bonus Track",
+    description: "Każdy z nas ma urojenia",
+    audio: urojeniaDemo,
+  },
+  {
+    src: naprawo,
+    title: "Na Prawo Ode Mnie",
+    track: "Bonus Track",
+    description: "Przestań ryczeć.",
+    audio: urojeniaDemo,
   },
 ];
 
