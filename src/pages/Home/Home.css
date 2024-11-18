@@ -284,7 +284,7 @@ header .menu {
   .arrows {
     width: 90px;
     height: 90px;
-    top: 50%;
+    top: 60%;
     bottom: 0;
     margin: auto;
     left: 0;
@@ -324,7 +324,7 @@ header .menu {
     z-index: 2;
   }
   .arrows {
-    top: 35%;
+    top: 45%;
     bottom: 0;
     margin: auto;
     position: absolute;
