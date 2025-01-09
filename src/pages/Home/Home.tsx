@@ -2,114 +2,111 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
 import { Loader } from "../Loader/Loader";
 
-import soma from "../../graphics/soma-min.webp";
-import ciemnosc from "../../graphics/ciemnosc-min.webp";
-import drapieznik from "../../graphics/drapieznik-min.webp";
-import strach from "../../graphics/strach-min.webp";
-import naksiezycu from "../../graphics/naksiezycu-min.webp";
-import usta from "../../graphics/usta-min.webp";
-import wladca from "../../graphics/wladca-min.webp";
-import dzikaswinia from "../../graphics/dzikaswinia-min.webp";
-import pozar from "../../graphics/pozar-min.webp";
-import pien from "../../graphics/pien-min.webp";
-import urojenia from "../../graphics/urojenia-min.webp";
-import wdymie from "../../graphics/wdymie-min.webp";
-import zaczyna from "../../graphics/zaczyna-min.webp";
 import nietrawie from "../../graphics/nietrawie-min.webp";
-import pierwszy from "../../graphics/pierwszy-min.webp";
-import piekno from "../../graphics/piekno-min.webp";
-import niewygram from "../../graphics/niewygram-min.webp";
-import zabijam from "../../graphics/zabijam-min.webp";
 import naprawo from "../../graphics/naprawo-min.webp";
+import wdymie from "../../graphics/wdymie-min.webp";
+import strach from "../../graphics/strach-min.webp";
+import wladca from "../../graphics/wladca-min.webp";
+import drapieznik from "../../graphics/drapieznik-min.webp";
+import naksiezycu from "../../graphics/naksiezycu-min.webp";
+import opowiesc from "../../graphics/opowiesc-min.webp";
+import piekno from "../../graphics/piekno-min.webp";
+import zabijam from "../../graphics/zabijam-min.webp";
+import pien from "../../graphics/pien-min.webp";
+import soma from "../../graphics/soma-min.webp";
 import trzytrzy from "../../graphics/33-min.webp";
+import niewygram from "../../graphics/niewygram-min.webp";
+import usta from "../../graphics/usta-min.webp";
+import dzikaswinia from "../../graphics/dzikaswinia-min.webp";
 
-import naksiezycuDemo from "./audio/naksiezycu_demo.mp3";
-import urojeniaDemo from "./audio/urojenia_demo.mp3";
-import pozarDemo from "./audio/pozar_demo.mp3";
-import ciemnoscDemo from "./audio/ciemnosc_demo.mp3";
-import drapieznikDemo from "./audio/drapieznik_demo.mp3";
-import dymDemo from "./audio/dym_demo.mp3";
-import dzikaDemo from "./audio/dzika_demo.mp3";
-import niewygramDemo from "./audio/niewygram_demo.mp3";
-import pieknoDemo from "./audio/piekno_demo.mp3";
-import ustaDemo from "./audio/usta_demo.mp3";
-import pierwszyDemo from "./audio/pierwszy_demo.mp3";
-import somaDemo from "./audio/soma_demo.mp3";
-import pienDemo from "./audio/pien_demo.mp3";
-import zaczynaDemo from "./audio/zaczyna_demo.mp3";
 import nietrawieDemo from "./audio/nietrawie_demo.mp3";
-import strachDemo from "./audio/strach_demo.mp3";
-import zabijamDemo from "./audio/zabijam.mp3";
+/*na prawo*/
+import dymDemo from "./audio/dym_demo.mp3";
+import strachDemo from "./audio/strach_demo.mp3"; /*zmiana*/
+/*wladca*/
+import drapieznikDemo from "./audio/drapieznik_demo.mp3"; /*zmiana*/
+import naksiezycuDemo from "./audio/naksiezycu_demo.mp3"; /*zmiana*/
+/*opowiesc*/
+import pieknoDemo from "./audio/piekno_demo.mp3"; /*zmiana*/
+import zabijamDemo from "./audio/zabijam.mp3"; /*zmiana*/
+import pienDemo from "./audio/pien_demo.mp3";
+import somaDemo from "./audio/soma_demo.mp3"; /*zmiana*/
+/*33*/
+import niewygramDemo from "./audio/niewygram_demo.mp3"; /*zmiana*/
+import dzikaDemo from "./audio/dzika_demo.mp3"; /*zmiana*/
+import ustaDemo from "./audio/usta_demo.mp3"; /*zmiana*/
+/*nieuzywane*/
+import zaczynaDemo from "./audio/zaczyna_demo.mp3";
 
 const images = [
   {
     src: nietrawie,
     title: "Nie Trawię",
     track: "Track 1",
-    description: "Jestem głodny dziś jak Wilk.",
+    description: "Jestem głodny dziś jak wilk.",
     audio: nietrawieDemo,
+  },
+  {
+    src: naprawo,
+    title: "Na Prawo Ode Mnie",
+    track: "Track 2",
+    description: "Przestań ryczeć.",
+    audio: dymDemo,
   },
   {
     src: wdymie,
     title: "W Dymie Jest Ogień",
-    track: "Track 2",
-    description: "..a w duszy jest strach..",
+    track: "Track 3",
+    description: "A w duszy jest strach.",
     audio: dymDemo,
+  },
+  {
+    src: strach,
+    title: "Strach",
+    track: "Track 4",
+    description: "Niejeden kryje sekret.",
+    audio: strachDemo,
   },
   {
     src: wladca,
     title: "Władca Much",
-    track: "Track 3",
+    track: "Track 5",
     description: "Wyznaj mi grzechy.",
-    audio: dymDemo,
-  },
-  {
-    src: dzikaswinia,
-    title: "Dzika Świnia",
-    track: "Track 4",
-    description: "Znikam za każdym pniem.",
-    audio: dzikaDemo,
+    audio: wladca,
   },
   {
     src: drapieznik,
     title: "Drapieżnik",
-    track: "Track 5",
+    track: "Track 6",
     description: "Jesteś tylko drapieżnikiem.",
     audio: drapieznikDemo,
   },
   {
     src: naksiezycu,
     title: "Na Księżycu",
-    track: "Track 6",
+    track: "Track 7",
     description: "W ciemności wiecznej pustki.",
     audio: naksiezycuDemo,
   },
   {
-    src: piekno,
-    title: "Piękno",
-    track: "Track 7",
-    description: "Co skrywa Twoja wiara, co kryje Twe spojrzenie?",
-    audio: pieknoDemo,
-  },
-  {
-    src: zaczyna,
-    title: "Zaczyna Padać",
+    src: opowiesc,
+    title: "Opowieść Bez Końca",
     track: "Track 8",
-    description: "Błądziliśmy pod słońcem sami..",
+    description: "Wytrzymaj jeszcze kilka chwil",
     audio: zaczynaDemo,
   },
   {
-    src: strach,
-    title: "Strach",
+    src: piekno,
+    title: "Piękno",
     track: "Track 9",
-    description: "To nie strach, to zbawienie.",
-    audio: strachDemo,
+    description: "Co kryje Twe spojrzenie?",
+    audio: pieknoDemo,
   },
   {
     src: zabijam,
     title: "Zabijam Płomień",
     track: "Track 10",
-    description: "Łamiesz obietnice swe..",
+    description: "Łamiesz obietnice swe.",
     audio: zabijamDemo,
   },
   {
@@ -120,53 +117,39 @@ const images = [
     audio: pienDemo,
   },
   {
-    src: trzytrzy,
-    title: "33",
-    track: "Track 12",
-    description: "Jeden, dwa, trzy.",
-    audio: pienDemo,
-  },
-  {
     src: soma,
     title: "SOMA",
-    track: "Track 13",
+    track: "Track 12",
     description: "Wszystko zaczyna i kończy się w głowie",
     audio: somaDemo,
   },
   {
-    src: pierwszy,
-    title: "Pierwszy i Ostatni",
-    track: "Track 14",
-    description: "Kto pierwszy - ten lepszy.",
-    audio: pierwszyDemo,
-  },
-  {
-    src: pozar,
-    title: "Pożar",
-    track: "Bonus Track",
-    description: "Pali się cały świat.",
-    audio: pozarDemo,
+    src: trzytrzy,
+    title: "33",
+    track: "Track 13",
+    description: "Jeden, dwa, trzy.",
+    audio: pienDemo,
   },
   {
     src: niewygram,
     title: "Nie Wygram",
-    track: "Bonus Track",
+    track: "Track 14",
     description: "Bo mam siebie.",
     audio: niewygramDemo,
   },
   {
-    src: urojenia,
-    title: "Urojenia",
+    src: dzikaswinia,
+    title: "Dzika Świnia",
     track: "Bonus Track",
-    description: "Każdy z nas ma urojenia",
-    audio: urojeniaDemo,
+    description: "Biegniesz gdzie biegną sny.",
+    audio: dzikaDemo,
   },
   {
-    src: naprawo,
-    title: "Na Prawo Ode Mnie",
+    src: usta,
+    title: "Usta Szeroko Otwarte",
     track: "Bonus Track",
-    description: "Przestań ryczeć.",
-    audio: urojeniaDemo,
+    description: "Idziesz ze mną wciąż w zaparte",
+    audio: ustaDemo,
   },
 ];
 
