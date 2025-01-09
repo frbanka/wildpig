@@ -32,7 +32,16 @@ header .menu {
   gap: 20px;
   font-weight: 500;
 }
-
+.mail {
+  display: flex;
+  font-size: 10px;
+  color: gray;
+}
+.mail a {
+  text-decoration: none;
+  color: gray;
+  font-size: 10px;
+}
 /* css slider */
 .slider {
   height: 100vh;

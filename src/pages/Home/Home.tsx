@@ -293,6 +293,9 @@ export const Home = () => {
               dzika swinia
             </h1>
           </button>
+          <div className="mail">
+            <a href="mailto:fr.banka17@gmail.com">Napisz maila: click</a>
+          </div>
         </div>
       ) : isLoading ? (
         // Loader po kliknięciu przycisku
